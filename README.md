@@ -17,6 +17,12 @@ Gugak-VocalSet is the first publicly available audio dataset for Korean traditio
 - **~69,000 audio-grounded sigimsae annotations** following a unified **17-type ontology** organized by functional position (onset / mid-note / offset / transition / accent / vibrato)
 - Rich metadata: genre hierarchy, lyrics–audio alignment, Western key, jangdan, tempo, bilingual captions, expert mood & timbre tags
 
+<p align="center">
+  <img src="figures/GugakGenre.png" width="680" alt="Gugak-VocalSet genre hierarchy: 102 Jeongak + 203 Minsogak tracks across four mid-level categories (Gungjung, Pungnyu, Pansori, Minyo) with representative sub-genres.">
+</p>
+
+*Gugak-VocalSet covers two top-level genres (Jeongak / Minsogak), four mid-level categories by musical function, and a range of sub-genres. Track counts shown at each level.*
+
 ---
 
 ## Sigimsae Ontology
@@ -149,25 +155,29 @@ Each track has a JSON file named after its track ID, e.g. `KC_TM_JC_GJ_P000074.j
 
 **`annotation.caption_ko` / `caption_en`** — free-text bilingual captions, mirroring the corresponding columns in `metadata.csv`.
 
+### Annotation example
+
+<p align="center">
+  <img src="figures/AnnotationExam.png" width="760" alt="Annotation example for a Jeongak piece (Gagok — Chosudaeyeop) and a Minsogak piece (Seodo Minyo — Homi Taryeong), each panel showing phrase-level lyrics, F0 contour over spectrogram, and sigimsae regions color-coded by functional group.">
+</p>
+
+Each panel shows the three layers of time-aligned annotation for one excerpt: **phrase-level lyrics** (top), **F0 contour** overlaid on the spectrogram (middle), and **sigimsae regions** color-coded by functional group — onset (blue), mid-note (purple), vibrato (orange), offset (green), accent (yellow), transition (pink). Top: Jeongak (*Gagok — Chosudaeyeop*). Bottom: Minsogak (*Seodo Minyo — Homi Taryeong*).
+
 ### Label statistics
 
-Across 305 tracks / 69,127 regions:
+Across 305 tracks / ~69k regions (multi-label regions: ~4.9%):
 
-| Label | Count | Label | Count |
-|---|---:|---|---:|
-| 꺾어내기        | 15,713 | 끊어내기              | 1,743 |
-| 보통 요성       | 11,158 | 아래로 향하는 요성    | 1,398 |
-| 굴려내기(위)    |  9,749 | 흘러내리는 요성        | 1,110 |
-| 추성             |  6,391 | 끝굴려내기(아래)       | 1,075 |
-| 격한 요성        |  5,524 | 끝굴려내기(위)         |   440 |
-| 감아내기(위)     |  4,496 | 감아내기(아래)         |   431 |
-| 밀어내기         |  3,642 |                        |       |
-| 굴려내기(아래)   |  2,606 |                        |       |
-| 채올리기         |  2,605 |                        |       |
-| 퇴성             |  2,602 |                        |       |
-| 전성             |  1,825 |                        |       |
+<p align="center">
+  <img src="figures/sigimsae_count.png" width="720" alt="Annotation count per sigimsae type on a log scale. Onset-DFl (꺾어내기) and Vibrato-St (보통 요성) are the most frequent; Onset-LTn (감아내기 아래) and Offset-RBk (끝굴려내기 위) are the rarest.">
+</p>
 
-Multi-label regions: **3,364 / 69,127 (4.9 %)**.
+*Instance count per type (log scale), grouped by functional position. Onset-DFl (꺾어내기) and Vibrato-St (보통 요성) dominate; Onset-LTn (감아내기 아래) and Offset-RBk (끝굴려내기 위) are the rarest.*
+
+<p align="center">
+  <img src="figures/sigimsae_dur.png" width="720" alt="Duration distribution per sigimsae type as violin plots on log scale. Vibrato types (Vibrato-St/Wd/LC/DT) exhibit notably longer durations (mean ~0.8–1.2 s) than non-vibrato ornaments (~0.3–0.5 s).">
+</p>
+
+*Duration distribution per type (violin plot, log scale; numbers above show mean in seconds). Vibrato types exhibit notably longer durations (mean ~0.8–1.2 s) than non-vibrato ornaments (~0.3–0.5 s), reflecting the sustained oscillatory nature of vibrato.*
 
 ---
 

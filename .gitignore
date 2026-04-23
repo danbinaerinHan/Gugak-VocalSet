@@ -1,0 +1,9 @@
+# 기본은 전부 무시
+*
+*/
+
+# 추적할 것만 예외 처리
+!.gitignore
+!README.md
+!figures/
+!figures/**

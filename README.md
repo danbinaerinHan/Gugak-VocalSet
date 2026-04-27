@@ -181,9 +181,43 @@ Across 305 tracks / ~69k regions (multi-label regions: ~4.9%):
 
 ---
 
+## Sample Release
+
+For double-blind review, this repository ships a **5-track audio + annotation sample** (one per major genre/style group) so reviewers can directly inspect the raw recordings alongside the JSON annotations. The **complete track-level metadata for all 305 tracks is already included** in `metadata.csv`; the remaining 300 audio recordings and annotation JSONs will be released upon publication.
+
+| Track ID | Genre | Sub-genre | Title | Singer | Gender | Duration |
+|---|---|---|---|---|---|---|
+| `KC_TM_JC_GJ_P000074` | Jeongak / Gungjung | 제례악 (ritual) | 종묘제례악 중 귀인 (*Gwi-in*, from Jongmyo Jerye-ak) | 이동영 | 남창 | 4:26 |
+| `KC_TM_JC_PR_P000001` | Jeongak / Pungnyu | 가곡 (Gagok) | 남창가곡 반우반계 반엽 | 홍창남 | 남창 | 7:03 |
+| `KC_TM_MF_PS_P000285` | Minsogak / Pansori | 춘향가 (Chunhyangga) | 진양 사랑가 1 | 전소이 | 여창 | 4:19 |
+| `KC_TM_MF_MY_P000174` | Minsogak / Minyo | 남도민요 (Namdo) | 물레타령 1 | 이주은 | 여창 | 3:37 |
+| `KC_TM_MF_MY_P000103` | Minsogak / Minyo | 경기민요 (Gyeonggi) | 매화타령 | 채수현 | 여창 | 5:00 |
+
+Repository layout for these samples:
+
+```
+sample/
+├── audio/                                  # 5 mp3 files (~58 MB total)
+│   ├── KC_TM_JC_GJ_P000074.mp3
+│   ├── KC_TM_JC_PR_P000001.mp3
+│   ├── KC_TM_MF_PS_P000285.mp3
+│   ├── KC_TM_MF_MY_P000174.mp3
+│   └── KC_TM_MF_MY_P000103.mp3
+└── annotation/                             # 5 JSON files (schema as above)
+    ├── KC_TM_JC_GJ_P000074.json
+    ├── KC_TM_JC_PR_P000001.json
+    ├── KC_TM_MF_PS_P000285.json
+    ├── KC_TM_MF_MY_P000174.json
+    └── KC_TM_MF_MY_P000103.json
+```
+
+The `mp3` and `json` files share the track ID, and both correspond 1-to-1 with the row in `metadata.csv` whose `정제데이터 파일명` equals the same ID with `S` ↔ `P` (e.g. `KC_TM_JC_GJ_S000074` ↔ `KC_TM_JC_GJ_P000074`).
+
+---
+
 ## Dataset Release
 
-This repository serves as the anonymous companion site during review. The audio and annotation files will be released upon publication.
+This repository serves as the anonymous companion site during review. It currently ships the **complete track-level metadata** (`metadata.csv`, 305 rows) and the **5-track sample** described above (`sample/`). The remaining 300 audio recordings and annotation JSONs will be released upon publication.
 
 ---
 

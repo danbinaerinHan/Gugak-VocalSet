@@ -1,0 +1,1143 @@
+{
+  "info": {
+    "identifier": "KC_TM_MF_PS_P000285",
+    "source_id": "KC_TM_MF_PS_M000285"
+  },
+  "annotation": {
+    "lyrics_regions": [
+      {
+        "lyrics_id": "L001",
+        "start_sec": 1.7839999389648435,
+        "end_sec": 12.52200073242187,
+        "lyrics": "사랑 사랑"
+      },
+      {
+        "lyrics_id": "L002",
+        "start_sec": 12.56800048828125,
+        "end_sec": 20.354000854492185,
+        "lyrics": "내사랑아"
+      },
+      {
+        "lyrics_id": "L003",
+        "start_sec": 23.7360009765625,
+        "end_sec": 34.22600097656245,
+        "lyrics": "어허둥둥"
+      },
+      {
+        "lyrics_id": "L004",
+        "start_sec": 34.247999877929686,
+        "end_sec": 41.921999511718745,
+        "lyrics": "내사랑이야"
+      },
+      {
+        "lyrics_id": "L005",
+        "start_sec": 44.84000122070312,
+        "end_sec": 52.45800170898436,
+        "lyrics": "광한루서 처음보고"
+      },
+      {
+        "lyrics_id": "L006",
+        "start_sec": 55.44800109863281,
+        "end_sec": 63.4260009765625,
+        "lyrics": "산하지해 깊은 사랑"
+      },
+      {
+        "lyrics_id": "L007",
+        "start_sec": 66.3280029296875,
+        "end_sec": 76.31400268554685,
+        "lyrics": "하상견지 만야월"
+      },
+      {
+        "lyrics_id": "L008",
+        "start_sec": 76.7600030517578,
+        "end_sec": 88.17800384521486,
+        "lyrics": "하월삼경 밤이 짧어"
+      },
+      {
+        "lyrics_id": "L009",
+        "start_sec": 88.38400604248046,
+        "end_sec": 95.68200561523436,
+        "lyrics": "구곡같이 서린 정회"
+      },
+      {
+        "lyrics_id": "L010",
+        "start_sec": 98.88000335693363,
+        "end_sec": 109.69800415039062,
+        "lyrics": "탐탐히 풀새 없이"
+      },
+      {
+        "lyrics_id": "L011",
+        "start_sec": 109.78400604248046,
+        "end_sec": 117.2500061035156,
+        "lyrics": "새벽닭이 원수로구나"
+      },
+      {
+        "lyrics_id": "L012",
+        "start_sec": 120.50400390624999,
+        "end_sec": 131.40200439453128,
+        "lyrics": "어허둥둥"
+      },
+      {
+        "lyrics_id": "L013",
+        "start_sec": 131.42400390625,
+        "end_sec": 139.0180041503906,
+        "lyrics": "내사랑이지"
+      },
+      {
+        "lyrics_id": "L014",
+        "start_sec": 142.00800369262703,
+        "end_sec": 152.73800415039062,
+        "lyrics": "밤이 짧어 한이 되면"
+      },
+      {
+        "lyrics_id": "L015",
+        "start_sec": 152.9440020751953,
+        "end_sec": 160.41000183105464,
+        "lyrics": "천중명월 잡어 메고"
+      },
+      {
+        "lyrics_id": "L016",
+        "start_sec": 163.55200408935545,
+        "end_sec": 171.47400390625012,
+        "lyrics": "장침가로 놀아보고"
+      },
+      {
+        "lyrics_id": "L017",
+        "start_sec": 174.38399627685547,
+        "end_sec": 182.28999633789064,
+        "lyrics": "이내 마음 거울이요"
+      },
+      {
+        "lyrics_id": "L018",
+        "start_sec": 185.1840118408203,
+        "end_sec": 195.96201171874998,
+        "lyrics": "도련님 굳은 맹세"
+      },
+      {
+        "lyrics_id": "L019",
+        "start_sec": 196.08001190185547,
+        "end_sec": 206.88201171875022,
+        "lyrics": "내 무진 오는 밤에"
+      },
+      {
+        "lyrics_id": "L020",
+        "start_sec": 206.9279962158203,
+        "end_sec": 214.58599609374997,
+        "lyrics": "사랑가로 즐겨보세"
+      },
+      {
+        "lyrics_id": "L021",
+        "start_sec": 217.78400024414063,
+        "end_sec": 228.54600036621093,
+        "lyrics": "사랑이야 어어"
+      },
+      {
+        "lyrics_id": "L022",
+        "start_sec": 228.5920036315918,
+        "end_sec": 239.1780041503906,
+        "lyrics": "내사랑이로구나"
+      },
+      {
+        "lyrics_id": "L023",
+        "start_sec": 239.2799961853028,
+        "end_sec": 250.08999633789062,
+        "lyrics": "어어흐어 둥둥"
+      },
+      {
+        "lyrics_id": "L024",
+        "start_sec": 250.1360003662109,
+        "end_sec": 258.07400024414073,
+        "lyrics": "니가 내 사랑이지야"
+      }
+    ],
+    "sigimsage_regions": [
+      {
+        "sigimsage_id": "S001",
+        "start_sec": 1.8239999389648438,
+        "end_sec": 2.1860000610351555,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S002",
+        "start_sec": 5.136000366210937,
+        "end_sec": 5.426000366210938,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S003",
+        "start_sec": 11.512000427246093,
+        "end_sec": 12.530000305175781,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S004",
+        "start_sec": 13.688000488281249,
+        "end_sec": 13.978000488281246,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S005",
+        "start_sec": 15.352000122070312,
+        "end_sec": 15.962000122070311,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S006",
+        "start_sec": 16.35200012207031,
+        "end_sec": 16.930000000000007,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S007",
+        "start_sec": 23.783999633789062,
+        "end_sec": 24.04200012207031,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S008",
+        "start_sec": 25.312000732421875,
+        "end_sec": 26.46600097656249,
+        "sigimsage_types": [
+          "아래로 향하는 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S009",
+        "start_sec": 27.08,
+        "end_sec": 27.562000732421875,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S010",
+        "start_sec": 27.639999999999997,
+        "end_sec": 27.937999877929688,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S011",
+        "start_sec": 33.560001831054684,
+        "end_sec": 34.28200134277343,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S012",
+        "start_sec": 35.544001464843745,
+        "end_sec": 35.97800170898437,
+        "sigimsage_types": [
+          "채올리기"
+        ]
+      },
+      {
+        "sigimsage_id": "S013",
+        "start_sec": 36.32000183105469,
+        "end_sec": 36.634001464843756,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S014",
+        "start_sec": 36.695999755859376,
+        "end_sec": 37.69799987792968,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S015",
+        "start_sec": 45.94400146484375,
+        "end_sec": 46.1700018310547,
+        "sigimsage_types": [
+          "채올리기"
+        ]
+      },
+      {
+        "sigimsage_id": "S016",
+        "start_sec": 47.352001342773434,
+        "end_sec": 48.28200134277341,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S017",
+        "start_sec": 49.91200012207031,
+        "end_sec": 50.05500036621092,
+        "sigimsage_types": [
+          "전성"
+        ]
+      },
+      {
+        "sigimsage_id": "S018",
+        "start_sec": 50.05600036621092,
+        "end_sec": 50.169999999999995,
+        "sigimsage_types": [
+          "감아내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S019",
+        "start_sec": 50.472000122070305,
+        "end_sec": 51.5540002441406,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S020",
+        "start_sec": 51.59200012207031,
+        "end_sec": 52.289999999999985,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S021",
+        "start_sec": 55.752001953124996,
+        "end_sec": 57.05800231933591,
+        "sigimsage_types": [
+          "아래로 향하는 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S022",
+        "start_sec": 57.808002319335934,
+        "end_sec": 58.36200195312499,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S023",
+        "start_sec": 58.80800231933594,
+        "end_sec": 59.25800231933593,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S024",
+        "start_sec": 59.50400024414063,
+        "end_sec": 59.90600036621093,
+        "sigimsage_types": [
+          "전성"
+        ]
+      },
+      {
+        "sigimsage_id": "S025",
+        "start_sec": 60.920001831054684,
+        "end_sec": 61.338002319335914,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S026",
+        "start_sec": 67.40800231933594,
+        "end_sec": 67.87400207519532,
+        "sigimsage_types": [
+          "채올리기"
+        ]
+      },
+      {
+        "sigimsage_id": "S027",
+        "start_sec": 68.0880010986328,
+        "end_sec": 68.46600097656248,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S028",
+        "start_sec": 68.9040008544922,
+        "end_sec": 69.18600097656248,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S029",
+        "start_sec": 70.03999877929688,
+        "end_sec": 71.2979992675781,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S030",
+        "start_sec": 83.62399902343749,
+        "end_sec": 84.21799926757807,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S031",
+        "start_sec": 84.592001953125,
+        "end_sec": 84.93000183105467,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S032",
+        "start_sec": 85.04800231933594,
+        "end_sec": 85.36200195312499,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S033",
+        "start_sec": 85.47199890136719,
+        "end_sec": 86.10599914550781,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S034",
+        "start_sec": 86.42399902343749,
+        "end_sec": 87.72999938964843,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S035",
+        "start_sec": 87.76799926757812,
+        "end_sec": 88.14599914550782,
+        "sigimsage_types": [
+          "채올리기"
+        ]
+      },
+      {
+        "sigimsage_id": "S036",
+        "start_sec": 88.6,
+        "end_sec": 89.10600036621095,
+        "sigimsage_types": [
+          "감아내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S037",
+        "start_sec": 89.2160009765625,
+        "end_sec": 89.96200134277343,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S038",
+        "start_sec": 91.27999999999999,
+        "end_sec": 91.63400024414062,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S039",
+        "start_sec": 91.70400024414062,
+        "end_sec": 91.99400024414062,
+        "sigimsage_types": [
+          "전성"
+        ]
+      },
+      {
+        "sigimsage_id": "S040",
+        "start_sec": 92.072001953125,
+        "end_sec": 92.9300018310547,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S041",
+        "start_sec": 93.20800415039062,
+        "end_sec": 93.49800415039063,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S042",
+        "start_sec": 99.02400573730468,
+        "end_sec": 99.58600585937498,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S043",
+        "start_sec": 99.75200378417969,
+        "end_sec": 100.03400390625,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S044",
+        "start_sec": 100.58400024414061,
+        "end_sec": 102.4820001220703,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S045",
+        "start_sec": 102.5920001220703,
+        "end_sec": 103.11400024414061,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S046",
+        "start_sec": 103.28799987792968,
+        "end_sec": 104.64200012207036,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S047",
+        "start_sec": 105.34400024414062,
+        "end_sec": 105.9220001220703,
+        "sigimsage_types": [
+          "굴려내기(아래)"
+        ]
+      },
+      {
+        "sigimsage_id": "S048",
+        "start_sec": 108.54400024414062,
+        "end_sec": 109.63400024414061,
+        "sigimsage_types": [
+          "보통 요성",
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S049",
+        "start_sec": 111.0720001220703,
+        "end_sec": 111.53799987792968,
+        "sigimsage_types": [
+          "감아내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S050",
+        "start_sec": 112.50400573730468,
+        "end_sec": 113.4340057373047,
+        "sigimsage_types": [
+          "격한 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S051",
+        "start_sec": 114.34400390625,
+        "end_sec": 115.04200378417966,
+        "sigimsage_types": [
+          "감아내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S052",
+        "start_sec": 115.11200378417968,
+        "end_sec": 117.24200378417967,
+        "sigimsage_types": [
+          "아래로 향하는 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S053",
+        "start_sec": 120.86399841308592,
+        "end_sec": 121.2659979248047,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S054",
+        "start_sec": 122.447998046875,
+        "end_sec": 123.65799804687495,
+        "sigimsage_types": [
+          "아래로 향하는 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S055",
+        "start_sec": 123.68000427246093,
+        "end_sec": 123.93800415039064,
+        "sigimsage_types": [
+          "채올리기"
+        ]
+      },
+      {
+        "sigimsage_id": "S056",
+        "start_sec": 124.3360040283203,
+        "end_sec": 124.89000427246091,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S057",
+        "start_sec": 124.92800415039062,
+        "end_sec": 125.21000427246094,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S058",
+        "start_sec": 130.8319982910156,
+        "end_sec": 131.4819982910156,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S059",
+        "start_sec": 132.6800061035156,
+        "end_sec": 133.21800598144532,
+        "sigimsage_types": [
+          "채올리기"
+        ]
+      },
+      {
+        "sigimsage_id": "S060",
+        "start_sec": 133.5119982910156,
+        "end_sec": 133.82599792480462,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S061",
+        "start_sec": 133.8560021972656,
+        "end_sec": 134.8900018310547,
+        "sigimsage_types": [
+          "격한 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S062",
+        "start_sec": 145.76000427246092,
+        "end_sec": 146.92200378417965,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S063",
+        "start_sec": 151.8000061035156,
+        "end_sec": 152.78600585937508,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S064",
+        "start_sec": 154.92000427246091,
+        "end_sec": 155.84200378417967,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S065",
+        "start_sec": 155.88800415039063,
+        "end_sec": 156.33000427246094,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S066",
+        "start_sec": 165.032001953125,
+        "end_sec": 165.362001953125,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S067",
+        "start_sec": 165.73600219726563,
+        "end_sec": 166.61800231933591,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S068",
+        "start_sec": 168.33600036621095,
+        "end_sec": 168.4979998779297,
+        "sigimsage_types": [
+          "전성"
+        ]
+      },
+      {
+        "sigimsage_id": "S069",
+        "start_sec": 168.52001190185547,
+        "end_sec": 168.7540118408203,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S070",
+        "start_sec": 169.2319982910156,
+        "end_sec": 171.20199829101566,
+        "sigimsage_types": [
+          "아래로 향하는 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S071",
+        "start_sec": 174.63200805664061,
+        "end_sec": 175.1380078125,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S072",
+        "start_sec": 176.2720080566406,
+        "end_sec": 177.05000793457032,
+        "sigimsage_types": [
+          "격한 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S073",
+        "start_sec": 177.4079962158203,
+        "end_sec": 177.64199645996098,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S074",
+        "start_sec": 179.99201171875,
+        "end_sec": 181.17801208496095,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S075",
+        "start_sec": 181.6560119628906,
+        "end_sec": 181.9060119628906,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S076",
+        "start_sec": 186.8640118408203,
+        "end_sec": 187.09801208496097,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S077",
+        "start_sec": 187.32001159667968,
+        "end_sec": 188.28201171874997,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S078",
+        "start_sec": 188.30400390625,
+        "end_sec": 188.71400390625004,
+        "sigimsage_types": [
+          "채올리기"
+        ]
+      },
+      {
+        "sigimsage_id": "S079",
+        "start_sec": 189.1680041503906,
+        "end_sec": 189.6020037841797,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S080",
+        "start_sec": 192.60000427246092,
+        "end_sec": 193.79400390624994,
+        "sigimsage_types": [
+          "격한 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S081",
+        "start_sec": 194.20000000000002,
+        "end_sec": 194.47400024414063,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S082",
+        "start_sec": 194.7520080566406,
+        "end_sec": 195.9140081787109,
+        "sigimsage_types": [
+          "격한 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S083",
+        "start_sec": 196.19200805664062,
+        "end_sec": 196.5540081787109,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S084",
+        "start_sec": 197.79199645996096,
+        "end_sec": 198.2739959716797,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S085",
+        "start_sec": 198.30399597167968,
+        "end_sec": 198.64199645996098,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S086",
+        "start_sec": 198.7599963378906,
+        "end_sec": 199.42599609375003,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S087",
+        "start_sec": 199.47199645996093,
+        "end_sec": 199.72999633789058,
+        "sigimsage_types": [
+          "굴려내기(아래)"
+        ]
+      },
+      {
+        "sigimsage_id": "S088",
+        "start_sec": 199.85599609375,
+        "end_sec": 200.27399597167968,
+        "sigimsage_types": [
+          "전성"
+        ]
+      },
+      {
+        "sigimsage_id": "S089",
+        "start_sec": 201.12801208496091,
+        "end_sec": 201.5140118408203,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S090",
+        "start_sec": 205.54400390624997,
+        "end_sec": 206.4980035400391,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S091",
+        "start_sec": 206.5040002441406,
+        "end_sec": 206.8179998779296,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S092",
+        "start_sec": 208.28000427246093,
+        "end_sec": 208.54600402832037,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S093",
+        "start_sec": 208.89600769042966,
+        "end_sec": 209.1060076904296,
+        "sigimsage_types": [
+          "감아내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S094",
+        "start_sec": 209.12000366210933,
+        "end_sec": 210.09800354003903,
+        "sigimsage_types": [
+          "격한 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S095",
+        "start_sec": 211.54400390624997,
+        "end_sec": 211.87400390624998,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S096",
+        "start_sec": 211.9120037841797,
+        "end_sec": 212.58600402832033,
+        "sigimsage_types": [
+          "아래로 향하는 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S097",
+        "start_sec": 220.8960040283203,
+        "end_sec": 221.37000427246093,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S098",
+        "start_sec": 221.46400024414064,
+        "end_sec": 222.45799987792972,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S099",
+        "start_sec": 222.48,
+        "end_sec": 222.75400024414063,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S100",
+        "start_sec": 223.16801208496094,
+        "end_sec": 223.6180120849609,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S101",
+        "start_sec": 223.72800415039063,
+        "end_sec": 224.65800415039055,
+        "sigimsage_types": [
+          "격한 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S102",
+        "start_sec": 225.11201171874998,
+        "end_sec": 225.89801208496092,
+        "sigimsage_types": [
+          "흘러내리는 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S103",
+        "start_sec": 226.10400817871093,
+        "end_sec": 226.4580078125,
+        "sigimsage_types": [
+          "전성"
+        ]
+      },
+      {
+        "sigimsage_id": "S104",
+        "start_sec": 227.02399597167968,
+        "end_sec": 228.52999633789065,
+        "sigimsage_types": [
+          "격한 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S105",
+        "start_sec": 229.67199645996092,
+        "end_sec": 230.22599609375007,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S106",
+        "start_sec": 230.45599975585935,
+        "end_sec": 231.77799987792963,
+        "sigimsage_types": [
+          "격한 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S107",
+        "start_sec": 231.7840002441406,
+        "end_sec": 232.12200012207026,
+        "sigimsage_types": [
+          "채올리기"
+        ]
+      },
+      {
+        "sigimsage_id": "S108",
+        "start_sec": 232.4800079345703,
+        "end_sec": 232.85000793457036,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S109",
+        "start_sec": 235.82400390625,
+        "end_sec": 237.05800415039067,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S110",
+        "start_sec": 237.16800415039063,
+        "end_sec": 237.57800415039065,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S111",
+        "start_sec": 239.3760040283203,
+        "end_sec": 239.85800415039057,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S112",
+        "start_sec": 240.4160003662109,
+        "end_sec": 241.3620001220703,
+        "sigimsage_types": [
+          "격한 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S113",
+        "start_sec": 241.4720001220703,
+        "end_sec": 241.73799987792967,
+        "sigimsage_types": [
+          "감아내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S114",
+        "start_sec": 241.88801208496093,
+        "end_sec": 242.82601196289062,
+        "sigimsage_types": [
+          "격한 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S115",
+        "start_sec": 242.92001159667967,
+        "end_sec": 243.16201171874997,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S116",
+        "start_sec": 243.19200805664062,
+        "end_sec": 243.7620080566406,
+        "sigimsage_types": [
+          "격한 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S117",
+        "start_sec": 249.4480041503906,
+        "end_sec": 250.05800415039064,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S118",
+        "start_sec": 250.08800415039062,
+        "end_sec": 250.22600402832032,
+        "sigimsage_types": [
+          "채올리기"
+        ]
+      },
+      {
+        "sigimsage_id": "S119",
+        "start_sec": 251.82400024414062,
+        "end_sec": 252.0420001220703,
+        "sigimsage_types": [
+          "전성"
+        ]
+      },
+      {
+        "sigimsage_id": "S120",
+        "start_sec": 252.07999999999998,
+        "end_sec": 252.85799987792964,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S121",
+        "start_sec": 253.32,
+        "end_sec": 253.5540002441406,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S122",
+        "start_sec": 254.52800048828124,
+        "end_sec": 255.31400024414057,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S123",
+        "start_sec": 255.32800048828125,
+        "end_sec": 255.58599975585938,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      }
+    ],
+    "caption_ko": "사랑가는 판소리 춘향가 중 이몽룡과 성춘향의 사랑을 표현하는 대목으로, 민속악의 대표적인 장르인 판소리의 특징이 잘 드러나는 곡이다. 이 곡은 긴사랑가와 자진사랑가 등 여러 구성으로 불리며, 두 주인공의 깊은 애정을 달콤하고 아름다운 선율로 담아내고 있다. 여창 가창자 전소이는 이 곡에서 그녀의 목소리로 사랑의 감정을 섬세하게 전달한다. 그녀는 판소리의 전통적인 창법을 활용하여 발성을 명확히 하고, 시김새를 적절히 사용하여 곡의 정서를 더욱 풍부하게 표현한다. 또한, 성량을 조절하며 곡의 흐름에 따라 다양한 음역을 자유롭게 오가면서 청중을 사로잡는다. 전소이는 호흡을 잘 조절하여 긴 구절에서도 안정적인 발음을 유지하며, 각 음절에 힘을 주어 감정의 변화를 효과적으로 전달한다. 진양의 리듬 위에서 그녀는 차분하게 흐름을 타며, 각 음의 시작과 끝을 부드럽게 연결하여 곡의 일관성을 높인다. 마무리에서는 호흡을 통해 곡의 여운을 남기며, 판소리의 전통적인 미를 더욱 강조하여 장르적 완성도를 높인다.",
+    "caption_en": "Sarangga is a section from the Pansori Chunhyangga that expresses the love between Yi Mongryong and Seong Chunhyang, clearly showcasing the characteristics of Pansori, a representative genre of Minsokak. This piece is performed in various configurations, including Ginsarangga and Jajinsarangga, capturing the deep affection of the two protagonists through sweet and beautiful melodies. yeochang vocalist Jeon Soyi delicately conveys the emotions of love with her voice in this piece. She utilizes traditional Pansori vocal techniques to ensure clear vocalization and employs sigimsae appropriately to further enrich the song's sentiment. Furthermore, she captivates the audience by controlling her vocal volume and freely navigating various registers according to the flow of the music. Jeon Soyi manages her breath well to maintain stable pronunciation even in long phrases, effectively communicating emotional shifts by emphasizing each syllable. Over the Jinyang rhythm, she calmly follows the flow, enhancing the piece's consistency by smoothly connecting the onset and offset of each note. In the finale, she leaves a lingering resonance through her breathing, further emphasizing the traditional beauty of Pansori and heightening the genre's artistic perfection."
+  }
+}

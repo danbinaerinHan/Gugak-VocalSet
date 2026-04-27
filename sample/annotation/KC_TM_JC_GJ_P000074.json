@@ -1,0 +1,1891 @@
+{
+  "info": {
+    "identifier": "KC_TM_JC_GJ_P000074",
+    "source_id": "KC_TM_JC_GJ_M000074"
+  },
+  "annotation": {
+    "lyrics_regions": [
+      {
+        "lyrics_id": "L001",
+        "start_sec": 1.693031553127439,
+        "end_sec": 15.494926962443781,
+        "lyrics": "황의상제 구민지막"
+      },
+      {
+        "lyrics_id": "L002",
+        "start_sec": 16.09776629130515,
+        "end_sec": 28.91473659027957,
+        "lyrics": "내권오구 내천명덕"
+      },
+      {
+        "lyrics_id": "L003",
+        "start_sec": 29.357208397052688,
+        "end_sec": 40.97692691967334,
+        "lyrics": "인불가실 우서영종"
+      },
+      {
+        "lyrics_id": "L004",
+        "start_sec": 41.34273583164113,
+        "end_sec": 54.112994759446295,
+        "lyrics": "기종여시 비아지사"
+      },
+      {
+        "lyrics_id": "L005",
+        "start_sec": 54.48481186487228,
+        "end_sec": 71.36193353474306,
+        "lyrics": "비아지사 유인지귀"
+      },
+      {
+        "lyrics_id": "L006",
+        "start_sec": 71.41071134303763,
+        "end_sec": 88.65366657511699,
+        "lyrics": "유인지귀 탄계홍기"
+      },
+      {
+        "lyrics_id": "L007",
+        "start_sec": 89.75116726174127,
+        "end_sec": 103.75378522678508,
+        "lyrics": "황의상제 구민지막"
+      },
+      {
+        "lyrics_id": "L008",
+        "start_sec": 104.08407506702412,
+        "end_sec": 117.32075067024135,
+        "lyrics": "내권오구 내천명덕"
+      },
+      {
+        "lyrics_id": "L009",
+        "start_sec": 117.529163842753,
+        "end_sec": 129.14867065800692,
+        "lyrics": "인불가실 우서영종"
+      },
+      {
+        "lyrics_id": "L010",
+        "start_sec": 129.4706294997231,
+        "end_sec": 142.2406498061658,
+        "lyrics": "기종여시 비아지사"
+      },
+      {
+        "lyrics_id": "L011",
+        "start_sec": 142.66686357762597,
+        "end_sec": 159.55148606239624,
+        "lyrics": "비아지사 유인지귀"
+      },
+      {
+        "lyrics_id": "L012",
+        "start_sec": 159.6498430865793,
+        "end_sec": 176.73117961971585,
+        "lyrics": "유인지귀 탄계홍기"
+      },
+      {
+        "lyrics_id": "L013",
+        "start_sec": 177.9934280967325,
+        "end_sec": 191.89455418128122,
+        "lyrics": "황의상제 구민지막"
+      },
+      {
+        "lyrics_id": "L014",
+        "start_sec": 192.35355362746904,
+        "end_sec": 205.23832379545885,
+        "lyrics": "내권오구 내천명덕"
+      },
+      {
+        "lyrics_id": "L015",
+        "start_sec": 205.69732324164664,
+        "end_sec": 217.36971679734873,
+        "lyrics": "인불가실 우서영종"
+      },
+      {
+        "lyrics_id": "L016",
+        "start_sec": 217.62219170557537,
+        "end_sec": 230.49953309530358,
+        "lyrics": "기종여시 비아지사"
+      },
+      {
+        "lyrics_id": "L017",
+        "start_sec": 231.01170008239495,
+        "end_sec": 247.79126613567706,
+        "lyrics": "비아지사 유인지귀"
+      },
+      {
+        "lyrics_id": "L018",
+        "start_sec": 247.8156550398242,
+        "end_sec": 265.03422136775595,
+        "lyrics": "유인지귀 탄계홍기"
+      }
+    ],
+    "sigimsage_regions": [
+      {
+        "sigimsage_id": "S001",
+        "start_sec": 3.6434831084847805,
+        "end_sec": 3.8613000334485466,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S002",
+        "start_sec": 5.296911584346081,
+        "end_sec": 5.494926970676778,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S003",
+        "start_sec": 5.52462927862638,
+        "end_sec": 5.742446203590145,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S004",
+        "start_sec": 6.356293901215296,
+        "end_sec": 6.603813134128669,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S005",
+        "start_sec": 6.692920057977477,
+        "end_sec": 6.940439290890849,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S006",
+        "start_sec": 10.80173932433939,
+        "end_sec": 11.069060095885822,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S007",
+        "start_sec": 12.207648567287324,
+        "end_sec": 12.5442747240495,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S008",
+        "start_sec": 12.890801650128218,
+        "end_sec": 13.098717805775445,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S009",
+        "start_sec": 13.494748578436836,
+        "end_sec": 13.78187088861634,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S010",
+        "start_sec": 17.524361690266474,
+        "end_sec": 17.702575537964094,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S011",
+        "start_sec": 18.009499386776675,
+        "end_sec": 18.187713234474305,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S012",
+        "start_sec": 19.999554019400154,
+        "end_sec": 20.66290556360797,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S013",
+        "start_sec": 22.534150964433046,
+        "end_sec": 22.94008250641096,
+        "sigimsage_types": [
+          "굴려내기(아래)"
+        ]
+      },
+      {
+        "sigimsage_id": "S014",
+        "start_sec": 23.23710558590701,
+        "end_sec": 23.435120972237698,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S015",
+        "start_sec": 23.573731742669192,
+        "end_sec": 23.78164789831641,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S016",
+        "start_sec": 24.692518675437615,
+        "end_sec": 25.1776563719478,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S017",
+        "start_sec": 25.197457910580887,
+        "end_sec": 25.464778682127314,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S018",
+        "start_sec": 25.593488683242278,
+        "end_sec": 25.761801761623364,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S019",
+        "start_sec": 26.405351767198123,
+        "end_sec": 26.633069461478414,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S020",
+        "start_sec": 26.682573308061098,
+        "end_sec": 26.920191771657926,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S021",
+        "start_sec": 27.375627160218528,
+        "end_sec": 27.63304716244843,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S022",
+        "start_sec": 27.741955624930316,
+        "end_sec": 27.939971011260997,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S023",
+        "start_sec": 30.54387334150964,
+        "end_sec": 30.771591035789935,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S024",
+        "start_sec": 31.23692719366707,
+        "end_sec": 31.464644887947365,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S025",
+        "start_sec": 32.098294124205594,
+        "end_sec": 32.49432489686701,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S026",
+        "start_sec": 34.77150183966997,
+        "end_sec": 35.10812799643218,
+        "sigimsage_types": [
+          "끝굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S027",
+        "start_sec": 35.10812799643214,
+        "end_sec": 35.30614338276285,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S028",
+        "start_sec": 36.10810569740216,
+        "end_sec": 36.385327238265134,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S029",
+        "start_sec": 36.87046493477533,
+        "end_sec": 37.098182629055636,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S030",
+        "start_sec": 37.25659493812019,
+        "end_sec": 37.44470955513435,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S031",
+        "start_sec": 38.27637417772326,
+        "end_sec": 38.49419110268703,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S032",
+        "start_sec": 38.63280187311852,
+        "end_sec": 38.860519567398825,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S033",
+        "start_sec": 39.16744341621139,
+        "end_sec": 39.513970342290115,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S034",
+        "start_sec": 39.69218418998773,
+        "end_sec": 39.94960419221764,
+        "sigimsage_types": [
+          "퇴성",
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S035",
+        "start_sec": 42.58320883041587,
+        "end_sec": 43.04854498829301,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S036",
+        "start_sec": 43.29606422120638,
+        "end_sec": 43.523781915486715,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S037",
+        "start_sec": 44.36534730739213,
+        "end_sec": 44.59306500167247,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S038",
+        "start_sec": 45.25641654588025,
+        "end_sec": 45.69205039580779,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S039",
+        "start_sec": 48.78109042256662,
+        "end_sec": 49.25632734976032,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S040",
+        "start_sec": 49.48404504404058,
+        "end_sec": 49.751365815587015,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S041",
+        "start_sec": 51.88003121864198,
+        "end_sec": 52.2760619913034,
+        "sigimsage_types": [
+          "끝굴려내기(아래)"
+        ]
+      },
+      {
+        "sigimsage_id": "S042",
+        "start_sec": 55.731430482773995,
+        "end_sec": 55.94924740773778,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S043",
+        "start_sec": 56.533392797413306,
+        "end_sec": 56.800713568959765,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S044",
+        "start_sec": 57.206645110937664,
+        "end_sec": 57.62247742223219,
+        "sigimsage_types": [
+          "퇴성",
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S045",
+        "start_sec": 58.048210502843126,
+        "end_sec": 58.26602742780689,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S046",
+        "start_sec": 59.95905898093432,
+        "end_sec": 60.22637975248077,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S047",
+        "start_sec": 64.26589363362693,
+        "end_sec": 64.52331363585682,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S048",
+        "start_sec": 64.73122979150406,
+        "end_sec": 64.98864979373393,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S049",
+        "start_sec": 65.02825287100015,
+        "end_sec": 65.2262682573308,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S050",
+        "start_sec": 66.90939904114171,
+        "end_sec": 67.26582673653697,
+        "sigimsage_types": [
+          "끊어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S051",
+        "start_sec": 69.58759460956249,
+        "end_sec": 69.9318441942034,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S052",
+        "start_sec": 70.06298689311426,
+        "end_sec": 70.42362931511904,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S053",
+        "start_sec": 70.76787889976,
+        "end_sec": 71.01377146021781,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S054",
+        "start_sec": 72.14487723832379,
+        "end_sec": 72.60387668451168,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S055",
+        "start_sec": 72.91534059442495,
+        "end_sec": 73.35794720324901,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S056",
+        "start_sec": 73.50548273952371,
+        "end_sec": 73.81694664943694,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S057",
+        "start_sec": 77.39058519475724,
+        "end_sec": 77.7676204541259,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S058",
+        "start_sec": 77.91515599040059,
+        "end_sec": 78.2266199003138,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S059",
+        "start_sec": 78.66922650913789,
+        "end_sec": 78.99708325641497,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S060",
+        "start_sec": 80.07901052242939,
+        "end_sec": 80.83308104116665,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S061",
+        "start_sec": 81.0461879268968,
+        "end_sec": 81.34125899944617,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S062",
+        "start_sec": 81.88222263245338,
+        "end_sec": 82.24286505445816,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S063",
+        "start_sec": 82.80022152482923,
+        "end_sec": 83.3411851578364,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S064",
+        "start_sec": 83.70182757984124,
+        "end_sec": 84.02968432711832,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S065",
+        "start_sec": 84.12804135130145,
+        "end_sec": 84.42311242385081,
+        "sigimsage_types": [
+          "퇴성",
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S066",
+        "start_sec": 86.11157467232785,
+        "end_sec": 87.0295735647037,
+        "sigimsage_types": [
+          "꺾어내기",
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S067",
+        "start_sec": 87.0305735647037,
+        "end_sec": 87.43939449880007,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S068",
+        "start_sec": 91.79988923758538,
+        "end_sec": 92.14413882222631,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S069",
+        "start_sec": 93.1604947387853,
+        "end_sec": 93.52113716079008,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S070",
+        "start_sec": 93.5703156728817,
+        "end_sec": 94.01292228170573,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S071",
+        "start_sec": 94.48831456525753,
+        "end_sec": 94.78338563780689,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S072",
+        "start_sec": 94.79977847517077,
+        "end_sec": 95.14402805981169,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S073",
+        "start_sec": 96.99641868192727,
+        "end_sec": 97.50459664020671,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S074",
+        "start_sec": 98.94716632822595,
+        "end_sec": 99.25863023813916,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S075",
+        "start_sec": 100.89791397452464,
+        "end_sec": 101.38969909544025,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S076",
+        "start_sec": 101.73394868008121,
+        "end_sec": 102.07819826472215,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S077",
+        "start_sec": 106.07805058150267,
+        "end_sec": 106.3895144914159,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S078",
+        "start_sec": 106.78294258814842,
+        "end_sec": 107.19276352224476,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S079",
+        "start_sec": 108.12715525198449,
+        "end_sec": 108.89761860808564,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S080",
+        "start_sec": 110.35658113346871,
+        "end_sec": 110.73361639283733,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S081",
+        "start_sec": 110.73461639283734,
+        "end_sec": 111.225401513753,
+        "sigimsage_types": [
+          "굴려내기(아래)"
+        ]
+      },
+      {
+        "sigimsage_id": "S082",
+        "start_sec": 111.46073522568636,
+        "end_sec": 111.60949278734297,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S083",
+        "start_sec": 112.73343880874825,
+        "end_sec": 113.32020474639377,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S084",
+        "start_sec": 113.48549092601209,
+        "end_sec": 113.6673057235924,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S085",
+        "start_sec": 114.60117263843647,
+        "end_sec": 114.83257328990233,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S086",
+        "start_sec": 114.90695207073057,
+        "end_sec": 115.08876686831086,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S087",
+        "start_sec": 115.59288971614704,
+        "end_sec": 115.78296882270827,
+        "sigimsage_types": [
+          "감아내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S088",
+        "start_sec": 115.85734760353652,
+        "end_sec": 116.09701256398324,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S089",
+        "start_sec": 118.33664029781292,
+        "end_sec": 118.53498371335506,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S090",
+        "start_sec": 118.62589111214517,
+        "end_sec": 118.80770590972551,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S091",
+        "start_sec": 119.48537924616099,
+        "end_sec": 119.70851558864591,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S092",
+        "start_sec": 120.22090274546301,
+        "end_sec": 120.57626803164263,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S093",
+        "start_sec": 123.08861796184271,
+        "end_sec": 123.29522568636577,
+        "sigimsage_types": [
+          "끝굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S094",
+        "start_sec": 123.43571893904141,
+        "end_sec": 123.67538389948817,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S095",
+        "start_sec": 124.36132154490458,
+        "end_sec": 124.80759422987441,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S096",
+        "start_sec": 125.03899488134014,
+        "end_sec": 125.22080967892045,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S097",
+        "start_sec": 125.49353187529083,
+        "end_sec": 125.64228943694744,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S098",
+        "start_sec": 126.38607724523033,
+        "end_sec": 126.65053513261984,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S099",
+        "start_sec": 126.81582131223824,
+        "end_sec": 126.97284318287576,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S100",
+        "start_sec": 127.27862261516982,
+        "end_sec": 127.70010237319687,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S101",
+        "start_sec": 127.89844578873894,
+        "end_sec": 128.1546393671476,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S102",
+        "start_sec": 130.75789669613772,
+        "end_sec": 131.31986970684036,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S103",
+        "start_sec": 131.4768915774779,
+        "end_sec": 131.7496137738483,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S104",
+        "start_sec": 132.0223359702187,
+        "end_sec": 132.2206793857609,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S105",
+        "start_sec": 132.54298743601674,
+        "end_sec": 132.80744532340634,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S106",
+        "start_sec": 133.36941833410887,
+        "end_sec": 133.60908329455557,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S107",
+        "start_sec": 133.6586691484411,
+        "end_sec": 133.8487482550023,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S108",
+        "start_sec": 135.42723127035828,
+        "end_sec": 135.69995346672874,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S109",
+        "start_sec": 136.93959981386692,
+        "end_sec": 137.4354583527222,
+        "sigimsage_types": [
+          "굴려내기(아래)"
+        ]
+      },
+      {
+        "sigimsage_id": "S110",
+        "start_sec": 137.74123778501627,
+        "end_sec": 137.99743136342482,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S111",
+        "start_sec": 140.080037226617,
+        "end_sec": 140.37755234993026,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S112",
+        "start_sec": 143.88161935784086,
+        "end_sec": 144.12128431828765,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S113",
+        "start_sec": 144.71631456491392,
+        "end_sec": 144.96424383434154,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S114",
+        "start_sec": 145.19564448580738,
+        "end_sec": 145.64191717077733,
+        "sigimsage_types": [
+          "퇴성",
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S115",
+        "start_sec": 146.32785481619356,
+        "end_sec": 146.51793392275482,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S116",
+        "start_sec": 147.63361563517913,
+        "end_sec": 147.84022335970224,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S117",
+        "start_sec": 148.20385295486273,
+        "end_sec": 148.42698929734766,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S118",
+        "start_sec": 148.80714751046997,
+        "end_sec": 149.0137552349931,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S119",
+        "start_sec": 152.35253606328524,
+        "end_sec": 152.57567240577015,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S120",
+        "start_sec": 152.9971521637971,
+        "end_sec": 153.21202419730116,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S121",
+        "start_sec": 153.2781386691484,
+        "end_sec": 153.45168915774786,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S122",
+        "start_sec": 157.09624941833408,
+        "end_sec": 157.39376454164733,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S123",
+        "start_sec": 157.77392275476964,
+        "end_sec": 158.01358771521635,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S124",
+        "start_sec": 158.08796649604466,
+        "end_sec": 158.45159609120532,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S125",
+        "start_sec": 159.1127408096789,
+        "end_sec": 159.36067007910663,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S126",
+        "start_sec": 160.56725919032107,
+        "end_sec": 160.82345276872977,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S127",
+        "start_sec": 160.8482456956724,
+        "end_sec": 161.27798976268036,
+        "sigimsage_types": [
+          "굴려내기(아래)"
+        ]
+      },
+      {
+        "sigimsage_id": "S128",
+        "start_sec": 161.78211261051652,
+        "end_sec": 162.09615635179162,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S129",
+        "start_sec": 164.2944625407166,
+        "end_sec": 164.71594229874373,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S130",
+        "start_sec": 165.5341088878548,
+        "end_sec": 165.8481526291298,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S131",
+        "start_sec": 166.21178222429037,
+        "end_sec": 166.44318287575626,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S132",
+        "start_sec": 166.48450442066076,
+        "end_sec": 166.73243369008844,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S133",
+        "start_sec": 168.43488134015817,
+        "end_sec": 168.93073987901363,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S134",
+        "start_sec": 169.26131223825033,
+        "end_sec": 169.51750581665897,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S135",
+        "start_sec": 170.17038622615166,
+        "end_sec": 170.4017868776175,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S136",
+        "start_sec": 171.33565379246158,
+        "end_sec": 171.60837598883205,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S137",
+        "start_sec": 171.922419730107,
+        "end_sec": 172.2116705444393,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S138",
+        "start_sec": 172.29431363424848,
+        "end_sec": 172.5091856677525,
+        "sigimsage_types": [
+          "퇴성",
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S139",
+        "start_sec": 172.55877152163796,
+        "end_sec": 172.7819078641229,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S140",
+        "start_sec": 174.37691949744064,
+        "end_sec": 174.55873429502094,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S141",
+        "start_sec": 174.6248487668683,
+        "end_sec": 175.50912982782688,
+        "sigimsage_types": [
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S142",
+        "start_sec": 175.53392275476958,
+        "end_sec": 175.7570590972545,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S143",
+        "start_sec": 179.27896566105935,
+        "end_sec": 179.61228972612255,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S144",
+        "start_sec": 179.94561379118585,
+        "end_sec": 180.34066453496445,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S145",
+        "start_sec": 181.43939941609898,
+        "end_sec": 181.73568747393287,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S146",
+        "start_sec": 181.79741415264837,
+        "end_sec": 182.14308355345466,
+        "sigimsage_types": [
+          "굴려내기(아래)"
+        ]
+      },
+      {
+        "sigimsage_id": "S147",
+        "start_sec": 182.48875295426106,
+        "end_sec": 182.7973863478381,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S148",
+        "start_sec": 182.9084943695259,
+        "end_sec": 183.2665091060752,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S149",
+        "start_sec": 187.1059085221743,
+        "end_sec": 187.41454191575133,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S150",
+        "start_sec": 187.4268872514946,
+        "end_sec": 187.7355206450716,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S151",
+        "start_sec": 188.7108021687752,
+        "end_sec": 189.04312623383845,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S152",
+        "start_sec": 189.04412623383845,
+        "end_sec": 189.55028499930484,
+        "sigimsage_types": [
+          "굴려내기(아래)"
+        ]
+      },
+      {
+        "sigimsage_id": "S153",
+        "start_sec": 189.93299040734044,
+        "end_sec": 190.2663144724036,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S154",
+        "start_sec": 194.3279299318782,
+        "end_sec": 194.64890866119828,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S155",
+        "start_sec": 194.64990866119828,
+        "end_sec": 194.98223272626163,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S156",
+        "start_sec": 194.9822327262616,
+        "end_sec": 195.32790212706797,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S157",
+        "start_sec": 196.52539969414707,
+        "end_sec": 197.06859446684274,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S158",
+        "start_sec": 198.8339774781037,
+        "end_sec": 199.26606422911146,
+        "sigimsage_types": [
+          "굴려내기(아래)"
+        ]
+      },
+      {
+        "sigimsage_id": "S159",
+        "start_sec": 199.55000695120253,
+        "end_sec": 199.85864034477953,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S160",
+        "start_sec": 200.93268455442794,
+        "end_sec": 201.56229667732498,
+        "sigimsage_types": [
+          "굴려내기(아래)"
+        ]
+      },
+      {
+        "sigimsage_id": "S161",
+        "start_sec": 201.5993326845544,
+        "end_sec": 201.85858473515907,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S162",
+        "start_sec": 201.9943834283331,
+        "end_sec": 202.32770749339625,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S163",
+        "start_sec": 202.67337689420268,
+        "end_sec": 203.06742763798127,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S164",
+        "start_sec": 203.06842763798127,
+        "end_sec": 203.40175170304457,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S165",
+        "start_sec": 203.6980397608786,
+        "end_sec": 204.01901849019873,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S166",
+        "start_sec": 204.02001849019874,
+        "end_sec": 204.3276518837759,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S167",
+        "start_sec": 206.50043097455858,
+        "end_sec": 206.8831363825941,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S168",
+        "start_sec": 206.8831363825942,
+        "end_sec": 207.16707910468511,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S169",
+        "start_sec": 207.66089253440845,
+        "end_sec": 208.1053246211594,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S170",
+        "start_sec": 208.2905046573057,
+        "end_sec": 208.82135409425828,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S171",
+        "start_sec": 210.41390240511606,
+        "end_sec": 210.87067982761005,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S172",
+        "start_sec": 211.25338523564574,
+        "end_sec": 211.6360906436813,
+        "sigimsage_types": [
+          "끝굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S173",
+        "start_sec": 211.63709064368132,
+        "end_sec": 211.8953426942861,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S174",
+        "start_sec": 212.50026414569717,
+        "end_sec": 212.95704156819127,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S175",
+        "start_sec": 213.21629361879604,
+        "end_sec": 213.4261643264284,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S176",
+        "start_sec": 213.5372723481162,
+        "end_sec": 213.80886973446397,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S177",
+        "start_sec": 213.80986973446397,
+        "end_sec": 214.05577644932572,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S178",
+        "start_sec": 214.69773390796607,
+        "end_sec": 214.96933129431386,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S179",
+        "start_sec": 215.03105797302936,
+        "end_sec": 215.15451133046017,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S180",
+        "start_sec": 215.574252745725,
+        "end_sec": 216.20386486862222,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S181",
+        "start_sec": 216.20486486862222,
+        "end_sec": 216.41373557625474,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S182",
+        "start_sec": 218.90749339635778,
+        "end_sec": 219.51241484776864,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S183",
+        "start_sec": 219.67290421242873,
+        "end_sec": 219.96919227026265,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S184",
+        "start_sec": 220.8086751007924,
+        "end_sec": 221.1419991658556,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S185",
+        "start_sec": 221.5000139024051,
+        "end_sec": 222.00617266787143,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S186",
+        "start_sec": 223.5987209787293,
+        "end_sec": 223.9690810510217,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S187",
+        "start_sec": 224.85794522452383,
+        "end_sec": 225.3641039899902,
+        "sigimsage_types": [
+          "굴려내기(아래)"
+        ]
+      },
+      {
+        "sigimsage_id": "S188",
+        "start_sec": 225.89495342694286,
+        "end_sec": 226.1912414847768,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S189",
+        "start_sec": 227.6479911024607,
+        "end_sec": 227.9689698317808,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S190",
+        "start_sec": 228.0553871819825,
+        "end_sec": 228.4751285972473,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S191",
+        "start_sec": 232.04293062699844,
+        "end_sec": 232.33921868483236,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S192",
+        "start_sec": 232.34021868483237,
+        "end_sec": 232.56143472820798,
+        "sigimsage_types": [
+          "감아내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S193",
+        "start_sec": 232.84537745029888,
+        "end_sec": 233.21573752259138,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S194",
+        "start_sec": 233.58609759488388,
+        "end_sec": 233.96880300291951,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S195",
+        "start_sec": 234.49965243987208,
+        "end_sec": 234.77124982621984,
+        "sigimsage_types": [
+          "퇴성",
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S196",
+        "start_sec": 235.70949534269425,
+        "end_sec": 236.05516474350057,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S197",
+        "start_sec": 236.40083414430694,
+        "end_sec": 236.63539552342547,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S198",
+        "start_sec": 237.00575559571803,
+        "end_sec": 237.25266231057967,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S199",
+        "start_sec": 240.58590296121227,
+        "end_sec": 240.91922702627542,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S200",
+        "start_sec": 241.2155150841095,
+        "end_sec": 241.48711247045733,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S201",
+        "start_sec": 241.52414847768665,
+        "end_sec": 241.74636452106213,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S202",
+        "start_sec": 241.83278187126373,
+        "end_sec": 242.17845127207005,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S203",
+        "start_sec": 245.37589322952874,
+        "end_sec": 245.6598359516196,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S204",
+        "start_sec": 246.06723203114137,
+        "end_sec": 246.3635200889753,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S205",
+        "start_sec": 246.43859210343376,
+        "end_sec": 246.73388016126785,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S206",
+        "start_sec": 247.16596691227582,
+        "end_sec": 247.43756429862358,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S207",
+        "start_sec": 247.8326150424023,
+        "end_sec": 248.12890310023633,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S208",
+        "start_sec": 248.59802585847353,
+        "end_sec": 248.98073126650905,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S209",
+        "start_sec": 248.98073126650914,
+        "end_sec": 249.40047268177392,
+        "sigimsage_types": [
+          "굴려내기(아래)"
+        ]
+      },
+      {
+        "sigimsage_id": "S210",
+        "start_sec": 249.9313221187265,
+        "end_sec": 250.2646461837897,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S211",
+        "start_sec": 253.70899485611008,
+        "end_sec": 253.99293757820095,
+        "sigimsage_types": [
+          "밀어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S212",
+        "start_sec": 254.3879883219797,
+        "end_sec": 254.6842763798137,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S213",
+        "start_sec": 255.1163631308216,
+        "end_sec": 255.42499652439864,
+        "sigimsage_types": [
+          "꺾어내기"
+        ]
+      },
+      {
+        "sigimsage_id": "S214",
+        "start_sec": 256.2891700264146,
+        "end_sec": 257.26445155011817,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S215",
+        "start_sec": 258.38787710273874,
+        "end_sec": 258.69651049631574,
+        "sigimsage_types": [
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S216",
+        "start_sec": 258.69651049631597,
+        "end_sec": 259.0051438898929,
+        "sigimsage_types": [
+          "굴려내기(위)"
+        ]
+      },
+      {
+        "sigimsage_id": "S217",
+        "start_sec": 259.4742666481301,
+        "end_sec": 259.79524537745016,
+        "sigimsage_types": [
+          "퇴성"
+        ]
+      },
+      {
+        "sigimsage_id": "S218",
+        "start_sec": 260.1532601139997,
+        "end_sec": 260.6841095509521,
+        "sigimsage_types": [
+          "감아내기(위)",
+          "추성"
+        ]
+      },
+      {
+        "sigimsage_id": "S219",
+        "start_sec": 262.4741832336994,
+        "end_sec": 263.5976087863197,
+        "sigimsage_types": [
+          "꺾어내기",
+          "보통 요성"
+        ]
+      },
+      {
+        "sigimsage_id": "S220",
+        "start_sec": 263.5986087863197,
+        "end_sec": 263.9556235228694,
+        "sigimsage_types": [
+          "추성"
+        ]
+      }
+    ],
+    "caption_ko": "귀인은 종묘제례악 중 하나로, 세종 시대의 '의인'을 개작한 곡으로서 제례악의 특징을 잘 드러내는 정악의 궁중음악이다. 이 곡은 조상을 따르는 민심을 노래하며, 초헌례 때 등가에서 연주되는 중요한 역할을 한다. 고려가요의 선율을 차용하여 궁중 의식 음악으로 승화된 이 곡은 장중한 분위기를 자아낸다. 남창 가창자 이동영의 목소리는 이 곡을 이끌어가는 핵심 요소로, 그의 발성은 명확하고 힘 있게 표현된다. 시김새는 전통적인 창법을 따르며, 곡의 흐름에 따라 자연스럽게 변화를 주어 청중에게 깊은 울림을 준다. 성량은 안정적이며, 호흡은 긴장을 유지하면서도 여유롭게 이어져 곡의 전개를 부드럽게 만든다. 이동영은 멜로디를 표현할 때 각 음을 정교하게 다루어, 마치 이야기하듯이 창법을 구사한다. 이러한 창법은 곡의 구조적 특징과 잘 어우러져, 궁중의 정중함과 경건함을 더욱 강조한다. 전반적인 리듬감은 가창자가 이끌어가며, 호흡의 흐름은 곡의 마무리를 장식하는 데 중요한 역할을 한다. 이동영의 호흡은 곡의 완성도를 높이며, 청중이 느끼는 긴장감과 해소의 순간을 조화롭게 만들어낸다.",
+    "caption_en": "Gwi-in is one of the movements in Jerye Ritual Music, adapted from 'Ui-in' of the King Sejong era, and represents a piece of gungjung music within Jeongak that captures the distinct characteristics of Jerye Ritual Music. This piece sings of the public's devotion to their ancestors and plays a vital role as it is performed by the Deungga ensemble during the Choheonrye ceremony. By incorporating melodies from Goryeo Gayo and elevating them into gungjung ceremonial music, it evokes a solemn and grand atmosphere. The voice of namchang vocalist Lee Dongyoung serves as a core element driving the piece, with his vocalization expressed clearly and powerfully. The sigimsae adheres to traditional vocal methods, naturally shifting with the flow of the music to resonate deeply with the audience. His vocal volume remains stable, while his breathing maintains a balance between tension and ease, ensuring a smooth progression of the piece. Lee Dongyoung handles each note with precision when delivering the melody, employing a vocal technique that feels as though he is storytelling. This approach harmonizes with the structural features of the piece, further emphasizing the courtesy and reverence of gungjung. The overall rhythmic sense is guided by the vocalist, and the flow of his breath plays a crucial role in framing the conclusion of the song. Lee Dongyoung's breathwork enhances the overall refinement of the piece, beautifully balancing the moments of tension and release for the audience."
+  }
+}

@@ -221,6 +221,50 @@ This repository serves as the anonymous companion site during review. It current
 
 ---
 
+## Experiment Code
+
+The `src/` and `configs/` directories ship the experiment code that produced the results in the paper. **The code is provided for reviewer inspection** — it documents the training procedure, model architectures, dataset construction, and evaluation metrics. Some imports reference modules from the original development repository (e.g. `prepare_f0_dataset.py`, `train.py`, `train_event.py`) that are not included in this anonymous release; the canonical 5-fold CV scripts in `src/` are self-explanatory for review purposes.
+
+### Layout
+
+```
+src/
+├── classification/                      # Tables 2 & 3
+│   ├── train_kfold.py                   # 5-fold CV training; also drives cross-genre runs
+│   ├── models.py                        # F0CNN (SigimsaeCNN), MelCNN, MERTEmbeddingClassifier
+│   └── dataset.py                       # F0 / mel / embedding dataset classes
+└── event/                               # Table 4
+    ├── train_event_kfold.py             # 5-fold CV event-detection training
+    ├── models_event.py                  # EDTCN, MERTHead (BiGRU probe over MERT hidden states)
+    ├── event_dataset.py                 # Frame-level dataset (10 ms hop, don't-care boundaries)
+    └── metrics_event.py                 # Frame F1, onset F1, event F1, IoU F1
+
+configs/                                 # Classification YAML configs (see base.yaml for shared defaults)
+├── base.yaml
+├── b2_f0cnn.yaml                        # F0 CNN
+├── b3_melcnn.yaml                       # Mel CNN
+├── b5_mert95M_17cat.yaml                # MERT-v1-95M MARBLE probing
+├── b5_mert_emb_330M.yaml                # MERT-v1-330M MARBLE probing
+└── b5_culturemert95M_17cat.yaml         # CultureMERT-95M MARBLE probing
+```
+
+### Mapping to paper tables
+
+| Paper | Code |
+|---|---|
+| **Table 2** — 17-category sigimsae classification (F0CNN, MelCNN, MERT-v1-95M/330M, CultureMERT-95M) | `src/classification/train_kfold.py` + corresponding `configs/b{2,3,5_*}.yaml` |
+| **Table 3** — Cross-genre transfer (Jeongak ↔ Minsogak) | `src/classification/train_kfold.py` with the cross-genre flags |
+| **Table 4** — 17-category event detection (EDTCN with f0/mel inputs, MERT/CultureMERT probing with BiGRU) | `src/event/train_event_kfold.py` with `--model {EDTCN, MERTHead}` and `--feature-type {f0, mel, mert_hidden}` |
+
+### Notes for reviewers
+
+- Both training scripts use **per-song stratified 5-fold CV** with a fixed seed, so a single invocation reproduces all five folds reported in the paper.
+- F0 features are extracted with **RMVPE at 10 ms hop**. The `delta_f0` channel is scaled (×10) and clipped inside the dataset class — without this normalization the channel has near-zero variance and is effectively ignored by the first conv layer.
+- MERT / CultureMERT probing operates on **pre-extracted hidden states** rather than raw waveforms, following the MARBLE protocol. The extraction step is handled by external scripts not included in this release.
+- The `src/` files are translated into English; only data values that match against the actual annotation files (e.g. genre identifiers `정악`/`민속악`, sigimsae class names) remain in Korean.
+
+---
+
 ## License
 
 - **Code:** released under the MIT License (see `LICENSE`).

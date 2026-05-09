@@ -1,0 +1,16 @@
+# ─── B3: Mel CNN (2D) ─────────────────────────────────
+# Standard DL baseline. Uses spectral information including timbre/energy.
+# Input: Mel spectrogram (1, 128, T)
+
+model: SigimsaeMelCNN
+
+# Mel parameters (3-second context, 128 mel bins)
+sr: 22050
+n_mels: 128
+n_fft: 2048
+hop_length: 512
+max_mel_frames: 130         # ceil((3.0 * 22050 - 2048) / 512) + 1 ≈ 128
+
+# Augmentation (SpecAugment)
+freq_mask_param: 16
+time_mask_param: 16

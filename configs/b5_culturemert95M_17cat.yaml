@@ -1,0 +1,23 @@
+# ─── CultureMERT-95M, 17cat, MARBLE probing ──
+# CultureMERT-95M (ntua-slp/CultureMERT-95M) pooled embedding + MARBLE MLP probing head.
+# Same architecture as MERT-v1-95M; CPT on 650h of non-Western music
+# (Turkish / Hindustani / Carnatic / Lyra).
+#
+# Pipeline:
+#   1) 17cat waveform (see above)
+#   2) extract_mert_embeddings.py --class-scheme 17cat --mert-model CultureMERT-95M
+#   3) this config
+
+model: MERTEmbeddingClassifier
+embedding_path: mert_embedding_cache/mert_CultureMERT-95M_17cat_L-1.npz
+class_scheme: 17cat
+
+# Training (converges quickly since input is pre-extracted embeddings)
+# Same hyperparameters as the MERT-v1-95M config (fair comparison)
+lr: 0.001
+batch_size: 256
+epochs: 100
+patience: 15
+scheduler: cosine
+weight_decay: 1e-4
+focal_gamma: 1.0

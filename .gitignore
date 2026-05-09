@@ -1,12 +1,28 @@
-# 기본은 전부 무시
+# Default: ignore everything
 *
 */
 
-# 추적할 것만 예외 처리
+# Whitelist what we want to track
 !.gitignore
 !README.md
+!metadata.csv
+
+# Dataset assets
 !figures/
 !figures/**
-!metadata.csv
 !sample/
 !sample/**
+
+# Experiment code (Python sources only)
+!src/
+!src/**/
+!src/**/*.py
+
+# Paper-relevant config files only (drop b1_svm, b4_resnet18, b5_mert, b5_mert_emb, b6_chromacnn)
+!configs/
+!configs/base.yaml
+!configs/b2_f0cnn.yaml
+!configs/b3_melcnn.yaml
+!configs/b5_mert95M_17cat.yaml
+!configs/b5_mert_emb_330M.yaml
+!configs/b5_culturemert95M_17cat.yaml

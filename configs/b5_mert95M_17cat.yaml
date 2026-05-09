@@ -1,0 +1,21 @@
+# ─── MERT-v1-95M baseline, 17cat, MARBLE probing ──
+# MERT-v1-95M pooled embedding + MARBLE-style MLP probing head (hidden=512).
+#
+# Pipeline:
+#   1) prepare_waveform_cache.py (7cat) + relabel_7cat_to_17cat.py → 17cat waveform
+#   2) extract_mert_embeddings.py --mert-model 95M (7cat)
+#      + relabel_embedding_7cat_to_17cat.py --mert-model 95M → 17cat embedding
+#   3) this config
+
+model: MERTEmbeddingClassifier
+embedding_path: mert_embedding_cache/mert_95M_17cat_L-1.npz
+class_scheme: 17cat
+
+# Training (converges quickly since input is pre-extracted embeddings)
+lr: 0.001
+batch_size: 256
+epochs: 100
+patience: 15
+scheduler: cosine
+weight_decay: 1e-4
+focal_gamma: 1.0

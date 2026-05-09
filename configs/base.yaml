@@ -1,0 +1,33 @@
+# ─── ISMIR 2026 Baseline shared settings ──────────────────
+# Default values inherited by every baseline config.
+# Per-config files override these by re-specifying the same key.
+
+# Data
+label_dir: precheck_sigimsae_labels
+audio_dir: KVocSet
+f0_dir: features/pitch_output/rmvpe
+chroma_dir: features/chroma_output
+class_scheme: 7cat          # 7cat | 9cat | 17cat
+
+# Split
+seed: 42
+train_ratio: 0.8
+val_ratio: 0.1
+test_ratio: 0.1
+split_by: song
+
+# Training (shared)
+batch_size: 256
+epochs: 100
+lr: 0.001
+weight_decay: 0.0001
+patience: 15
+scheduler: cosine
+focal_gamma: 1.0
+
+# Augmentation
+aug_prob: 0.3
+
+# wandb
+wandb_project: ismir2026-sigimsae-baseline
+no_wandb: false

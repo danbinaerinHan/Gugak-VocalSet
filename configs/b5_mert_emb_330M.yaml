@@ -1,0 +1,16 @@
+# ─── B5: MERT Embedding Classifier (330M) ─────────────
+# Classifier on top of pre-extracted MERT-v1-330M embeddings.
+#
+# Step 1: python extract_mert_embeddings.py --mert-model 330M
+# Step 2: python train.py --config configs/b5_mert_emb_330M.yaml
+
+model: MERTEmbeddingClassifier
+embedding_path: mert_embedding_cache/mert_330M_7cat_L-1.npz
+
+# Training (converges quickly since input is pre-extracted embeddings)
+lr: 0.001
+batch_size: 256
+epochs: 100
+patience: 15
+scheduler: cosine
+weight_decay: 1e-4

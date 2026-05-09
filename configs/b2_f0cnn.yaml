@@ -1,0 +1,15 @@
+# ─── B2: F0 CNN (1D) ──────────────────────────────────
+# Tests the hypothesis that sigimsae is primarily a pitch-contour phenomenon.
+# Input: norm_f0 + voicing + delta_f0 (3ch, 1D)
+
+model: SigimsaeCNN
+
+# F0 parameters (3-second context → 300 frames @ 10ms hop)
+f0_method: rmvpe
+max_frames: 300
+
+# Augmentation (F0 only)
+aug_pitch_shift: 0.1
+aug_time_stretch_lo: 0.85
+aug_time_stretch_hi: 1.15
+aug_noise_std: 0.015

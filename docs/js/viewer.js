@@ -171,8 +171,60 @@ function init() {
   wireCQT();           // Task 11
   loadTrack(ids[0]);
 }
-function wirePlayback() {}   // placeholder — Task 10
-function wirePointer() {}    // placeholder — Task 10
+function wirePlayback() {
+  els.play.addEventListener('click', () => {
+    els.audio.paused ? els.audio.play() : els.audio.pause();
+  });
+  els.audio.addEventListener('play',  () => { els.play.textContent = '⏸ Pause'; tick(); });
+  els.audio.addEventListener('pause', () => { els.play.textContent = '▶ Play'; });
+  function tick() {
+    if (els.audio.paused) return;
+    const now = els.audio.currentTime;
+    // auto-scroll: keep playhead inside the window, jump-scroll at 85%
+    if (now > state.t0 + WIN_SEC * 0.85 || now < state.t0) {
+      state.t0 = Math.max(0, now - WIN_SEC * 0.15);
+    }
+    redraw();
+    requestAnimationFrame(tick);
+  }
+}
+
+function wirePointer() {
+  // overview: click = seek
+  els.overview.addEventListener('click', (e) => {
+    const frac = e.offsetX / els.overview.clientWidth;
+    seekTo(frac * state.track.duration_sec);
+  });
+  // main canvas: click region = play from region start; hover = tooltip
+  els.main.addEventListener('click', (e) => {
+    const r = regionAt(e);
+    seekTo(r ? r.start : state.t0 + e.offsetX / els.main.clientWidth * WIN_SEC);
+  });
+  els.main.addEventListener('mousemove', (e) => {
+    const r = regionAt(e);
+    if (!r) { els.tooltip.style.display = 'none'; return; }
+    const o = window.DEMO.ontology;
+    els.tooltip.innerHTML = r.types.map(kr =>
+      `<b>${kr}</b> · ${o.types[kr]?.roman ?? ''} · ${o.types[kr]?.en ?? ''}`).join('<br>');
+    els.tooltip.style.display = 'block';
+    els.tooltip.style.left = (e.clientX + 12) + 'px';
+    els.tooltip.style.top  = (e.clientY + 12) + 'px';
+  });
+  els.main.addEventListener('mouseleave', () => els.tooltip.style.display = 'none');
+
+  function regionAt(e) {
+    const sec = state.t0 + e.offsetX / els.main.clientWidth * WIN_SEC;
+    return state.track.sigimsae_regions.find(r =>
+      r.start <= sec && sec <= r.end &&
+      !r.types.every(kr => state.hiddenGroups.has(groupOf(kr))));
+  }
+  function seekTo(sec) {
+    els.audio.currentTime = Math.max(0, Math.min(sec, state.track.duration_sec - 0.1));
+    state.t0 = Math.max(0, els.audio.currentTime - WIN_SEC * 0.15);
+    if (els.audio.paused) els.audio.play();
+    redraw();
+  }
+}
 function wireCQT() {}        // placeholder — Task 11
 window.VIEWER = { state, els, redraw, drawCQT, wirePlayback, wirePointer, wireCQT, xOf, WIN_SEC };
 

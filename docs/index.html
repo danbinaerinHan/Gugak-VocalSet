@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gugak-VocalSet — Korean Traditional Singing Dataset with Sigimsae Annotations</title>
+<title>Gugak-VocalSet — A Multi-Genre Studio-Quality Dataset of Korean Traditional Singing with Sigimsae Annotations</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
 
 <header id="hero">
   <h1>Gugak-VocalSet</h1>
-  <p class="subtitle">A High-quality Korean Traditional Singing Dataset with Sigimsae Annotations
+  <p class="subtitle">A Multi-Genre Studio-Quality Dataset of Korean Traditional Singing with Sigimsae Annotations
     <span class="kr">시김새 주석을 갖춘 한국 전통 성악 데이터셋</span></p>
   <p class="authors"><!-- AUTHORS: fill in upon publication --></p>
   <p class="badges">
@@ -40,10 +40,71 @@
     <div id="gallery"></div></section>
 
   <section id="paper"><h2>Paper &amp; Benchmarks</h2>
-    <div id="paper-content"></div></section>
+    <div id="paper-content">
+      <p><em>Abstract.</em> We present Gugak-VocalSet, the first publicly available audio dataset for Korean traditional singing with dense annotations of <em>sigimsae</em>, a structured pitch contour system of vocal expressions. Gugak-VocalSet contains 24.5 hours of unaccompanied solo vocal recordings across 300 pieces (305 tracks) of representative repertoire curated by the National Gugak Center, performed by 20 professional singers in a controlled studio environment with fixed key and tempo. In addition to genre, lyrics, and mood/timbre tags, the dataset provides a unified sigimsae ontology and approximately 68,000 segments (71,700 instances including multi-label) of audio-grounded sigimsae annotations; the ontology adopts a functional-position-based hierarchy designed for consistent application across genres, and 12 expert annotators specializing in Korean traditional music performed segment-level labeling accordingly. Baseline experiments on sigimsae classification and event detection show that domain-informed F0 representations remain competitive with, and on classification surpass, frozen probing of a general-purpose music foundation model, while pitch and spectral cues play complementary roles in event-level detection.</p>
+
+      <p style="text-align:center"><img src="assets/figures/GugakGenre.png" style="max-width:100%" alt="Gugak-VocalSet genre hierarchy"></p>
+      <p style="text-align:center"><img src="assets/figures/AnnotationExam.png" style="max-width:100%" alt="Annotation example: lyrics, F0 contour, sigimsae regions"></p>
+
+      <h3>17-category sigimsae classification (genre-stratified 80/10/10, 5-fold CV)</h3>
+      <div class="tablewrap"><table class="bench">
+        <thead><tr><th>Model</th><th>Input</th><th>Macro F1</th><th>Weighted F1</th></tr></thead>
+        <tbody>
+          <tr><td colspan="4"><em>Task-specific CNNs (trained from scratch)</em></td></tr>
+          <tr><td>F0CNN</td><td>F0 contour</td><td>.433 ± .019</td><td>.527 ± .025</td></tr>
+          <tr><td>MelCNN</td><td>Mel spec</td><td>.400 ± .018</td><td>.510 ± .025</td></tr>
+          <tr><td colspan="4"><em>Frozen foundation models (best layer, MARBLE 2-layer MLP probe)</em></td></tr>
+          <tr><td>MERT-v1<sub>95M</sub> (L7)</td><td>MERT emb.</td><td>.358 ± .011</td><td>.454 ± .017</td></tr>
+          <tr><td>CultureMERT-TA<sub>95M</sub> (L7)</td><td>MERT emb.</td><td>.334 ± .022</td><td>.427 ± .031</td></tr>
+          <tr><td>CultureMERT<sub>95M</sub> (L5)</td><td>MERT emb.</td><td>.316 ± .017</td><td>.410 ± .019</td></tr>
+        </tbody>
+      </table></div>
+      <p class="caption">17-category sigimsae classification (song-level, genre-stratified 80/10/10 split, mean ± std over 5-fold CV). F0CNN (Macro F1 .433) matches or slightly surpasses MelCNN (.400), indicating the F0 contour alone captures most of the discriminative signal. Frozen MERT-v1<sub>95M</sub> peaks at .358 (L7), and its culturally-adapted variants CultureMERT-TA<sub>95M</sub> and CultureMERT<sub>95M</sub> underperform it at every probed layer. MERT-family models report the best layer among L5-L12.</p>
+
+      <h3>Cross-genre transfer (Jeongak ↔ Minsogak)</h3>
+      <div class="tablewrap"><table class="bench">
+        <thead><tr><th rowspan="2">Direction</th><th colspan="2">Within</th><th colspan="2">Cross</th></tr>
+          <tr><th>M.F1</th><th>Acc</th><th>M.F1</th><th>Acc</th></tr></thead>
+        <tbody>
+          <tr><td>Jeongak → Minsogak</td><td>.418 ± .005</td><td>.553 ± .005</td><td>.275 ± .001</td><td>.426 ± .002</td></tr>
+          <tr><td>Minsogak → Jeongak</td><td>.346 ± .010</td><td>.506 ± .014</td><td>.285 ± .008</td><td>.434 ± .024</td></tr>
+        </tbody>
+      </table></div>
+      <p class="caption">F0CNN, 17-category ontology, 5-fold CV, 102 songs per genre (matched), mean ± std over 3 seeds. Cross-genre Macro F1 drops 34.2% for Jeongak→Minsogak and 17.6% for Minsogak→Jeongak relative to within-genre, well above chance and indicating a shared acoustic foundation across the two traditions.</p>
+
+      <h3>Event detection (17-category)</h3>
+      <div class="tablewrap"><table class="bench">
+        <thead><tr><th>Model</th><th>Frame F1<sub>M</sub></th><th>Ev.F1<sub>200ms</sub></th><th>IoU F1<sub>0.5</sub></th></tr></thead>
+        <tbody>
+          <tr><td>EDTCN (f0)</td><td>.322 ± .009</td><td>.678 ± .020</td><td>.663 ± .020</td></tr>
+          <tr><td>EDTCN (mel)</td><td>.269 ± .013</td><td>.763 ± .012</td><td>.712 ± .015</td></tr>
+          <tr><td>MERT-v1<sub>95M</sub> (L5)</td><td>.311 ± .015</td><td>.756 ± .026</td><td>.706 ± .028</td></tr>
+          <tr><td>CultureMERT<sub>95M</sub> (L5)</td><td>.294 ± .016</td><td>.747 ± .019</td><td>.700 ± .022</td></tr>
+        </tbody>
+      </table></div>
+      <p class="caption">Sigimsae event detection on the 17-category ontology: frame-level macro F1, event-level F1 (onset matching within ±200ms), and segment-level F1 (IoU ≥ 0.5). MERT-family models report the best layer among L5-L12. EDTCN(f0) attains the highest frame-level Macro F1, while EDTCN(mel) and the frozen MERT probes lead on event- and segment-level metrics, indicating pitch and spectral cues play complementary roles in event-level detection.</p>
+
+      <h3>Label statistics</h3>
+      <p style="text-align:center"><img src="assets/figures/sigimsae_count.png" style="max-width:100%" alt="Annotation count per sigimsae type (log scale)"></p>
+      <p style="text-align:center"><img src="assets/figures/sigimsae_dur.png" style="max-width:100%" alt="Duration distribution per sigimsae type"></p>
+    </div></section>
 
   <section id="download"><h2>Download &amp; Citation</h2>
-    <div id="download-content"></div></section>
+    <div id="download-content">
+      <p>The dataset (24.5 h audio, 305 annotation JSONs, metadata) is distributed under
+         <b>CC BY-NC-SA 4.0</b>; code under <b>MIT</b>.
+         <!-- RELEASE LINK: add the download/Zenodo link upon publication --></p>
+      <p>This repository currently ships a 5-track sample and the complete metadata; see the
+         <a href="https://github.com/danbinaerinHan/traditional_korean_music">GitHub README</a> for schemas.</p>
+      <h3>Citation</h3>
+      <pre class="bibtex" id="bibtex">@inproceedings{gugakvocalset2026,
+  title     = {Gugak-VocalSet: A Multi-Genre Studio-Quality Dataset of Korean Traditional Singing with Sigimsae Annotations},
+  author    = {ANONYMOUS — fill in upon publication},
+  booktitle = {Proc. of the 27th Int. Society for Music Information Retrieval Conf. (ISMIR)},
+  year      = {2026}
+}</pre>
+      <button onclick="navigator.clipboard.writeText(document.querySelector('#bibtex').textContent)">Copy BibTeX</button>
+    </div></section>
 </main>
 
 <footer><p>Recordings © National Gugak Center collaboration · Dataset CC BY-NC-SA 4.0 · Code MIT</p></footer>

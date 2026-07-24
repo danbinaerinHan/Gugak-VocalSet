@@ -1,0 +1,79 @@
+:root {
+  --ink: #1c1f24; --muted: #6a7280; --bg: #ffffff; --panel: #f6f7f9;
+  --accent: #4C72B0; --line: #e3e6ea; --kr: #9aa2ad;
+  --c-onset: #4C72B0; --c-vibrato: #DD8452; --c-mid: #8172B2;
+  --c-offset: #55A868; --c-accent: #CCB974; --c-transition: #DA8BC3;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.6 "Helvetica Neue", Arial, "Apple SD Gothic Neo",
+       "Noto Sans KR", sans-serif; color: var(--ink); background: var(--bg); }
+.kr { color: var(--kr); font-weight: 400; font-size: .8em; margin-left: .4em; }
+
+#topnav { position: sticky; top: 0; background: #fffffff2; border-bottom: 1px solid var(--line);
+  padding: .6rem 1.2rem; display: flex; gap: 1.1rem; align-items: center; z-index: 10; }
+#topnav .brand { font-weight: 700; margin-right: auto; }
+#topnav a { color: var(--muted); text-decoration: none; }
+#topnav a:hover { color: var(--accent); }
+
+#hero { text-align: center; padding: 4rem 1rem 2.5rem; }
+#hero h1 { font-size: 2.6rem; margin: 0 0 .4rem; }
+.subtitle { color: var(--muted); max-width: 46rem; margin: 0 auto; }
+.badges { margin: 1.2rem 0; }
+.badge { display: inline-block; border: 1px solid var(--line); border-radius: 999px;
+  padding: .35rem 1rem; margin: 0 .25rem; text-decoration: none; color: var(--ink); }
+.badge:hover { border-color: var(--accent); color: var(--accent); }
+.stats { list-style: none; padding: 0; display: flex; justify-content: center;
+  gap: 1.6rem; flex-wrap: wrap; color: var(--muted); }
+.stats b { color: var(--ink); font-size: 1.25rem; display: block; }
+
+main { max-width: 60rem; margin: 0 auto; padding: 0 1.2rem 4rem; }
+section { padding-top: 3rem; }
+section h2 { border-bottom: 2px solid var(--line); padding-bottom: .4rem; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1rem; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 1rem; }
+.card h3 { margin: .1rem 0 .3rem; font-size: 1.05rem; }
+.card .meta { color: var(--muted); font-size: .85rem; margin-bottom: .5rem; }
+.card audio { width: 100%; }
+.card details { font-size: .85rem; margin-top: .5rem; }
+.card .actions { margin-top: .6rem; }
+.card button, #viewer button { border: 1px solid var(--line); background: #fff;
+  border-radius: 6px; padding: .3rem .8rem; cursor: pointer; }
+.card button:hover, #viewer button:hover { border-color: var(--accent); color: var(--accent); }
+
+#viewer { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 1rem; }
+#viewer canvas { display: block; width: 100%; }
+#viewer .row { display: flex; gap: .8rem; align-items: center; flex-wrap: wrap; margin-bottom: .6rem; }
+.legend { display: flex; gap: .7rem; flex-wrap: wrap; font-size: .82rem; }
+.legend .sw { display: inline-block; width: .85em; height: .85em; border-radius: 3px;
+  margin-right: .3em; vertical-align: -1px; }
+.legend .off { opacity: .35; }
+#tooltip { position: fixed; background: #1c1f24; color: #fff; font-size: .8rem;
+  padding: .3rem .6rem; border-radius: 6px; pointer-events: none; display: none; z-index: 20; }
+
+.group-block h3 { margin: 1.4rem 0 .6rem; }
+.type-card { border: 1px solid var(--line); border-left: 5px solid var(--line);
+  border-radius: 8px; padding: .7rem .9rem; margin-bottom: .7rem; background: #fff; }
+.type-card .names b { font-size: 1rem; }
+.type-card .names .roman { color: var(--muted); font-style: italic; margin: 0 .5em; }
+.type-card .count { float: right; color: var(--muted); font-size: .8rem; }
+.snips { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: .5rem; }
+.snip { display: flex; gap: .5rem; align-items: center; background: var(--panel);
+  border-radius: 8px; padding: .4rem .6rem; }
+.snip canvas { width: 120px; height: 44px; }
+.snip button { width: 2rem; height: 2rem; border-radius: 50%; }
+
+table.bench { border-collapse: collapse; width: 100%; font-size: .9rem; margin: 1rem 0; }
+table.bench th, table.bench td { border: 1px solid var(--line); padding: .35rem .6rem; text-align: right; }
+table.bench th:first-child, table.bench td:first-child { text-align: left; }
+table.bench thead { background: var(--panel); }
+.tablewrap { overflow-x: auto; }
+
+pre.bibtex { background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+  padding: 1rem; overflow-x: auto; font-size: .82rem; }
+footer { border-top: 1px solid var(--line); color: var(--muted); text-align: center;
+  padding: 1.5rem; font-size: .85rem; }
+@media (max-width: 640px) {
+  #hero h1 { font-size: 2rem; }
+  #topnav { gap: .7rem; font-size: .9rem; overflow-x: auto; }
+}

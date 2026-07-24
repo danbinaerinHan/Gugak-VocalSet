@@ -5,10 +5,16 @@ const state = {
   track: null, t0: 0,          // window start (sec)
   hiddenGroups: new Set(),
   cqtOn: false, cqtManifest: null,
-  playing: false,
 };
 const els = {};
 const cqtTiles = new Map();   // "trackId_idx" -> Image
+
+function sizeCanvas(c, cssH) {
+  const W = Math.round(c.clientWidth * devicePixelRatio), H = Math.round(cssH * devicePixelRatio);
+  if (c.width !== W) c.width = W;
+  if (c.height !== H) c.height = H;
+  return [W, H];
+}
 
 function buildDOM() {
   const v = document.querySelector('#viewer');
@@ -45,8 +51,7 @@ function yOf(hz, h) {
 // --- main canvas --------------------------------------------------------
 function drawMain() {
   const c = els.main, ctx = c.getContext('2d');
-  const w = c.width = c.clientWidth * devicePixelRatio;
-  const h = c.height = 300 * devicePixelRatio;
+  const [w, h] = sizeCanvas(c, 300);
   ctx.clearRect(0, 0, w, h);
   const t = state.track; if (!t) return;
   const t1 = state.t0 + WIN_SEC;
@@ -91,8 +96,7 @@ function drawMain() {
 // --- lyrics strip -------------------------------------------------------
 function drawLyrics() {
   const c = els.lyrics, ctx = c.getContext('2d');
-  const w = c.width = c.clientWidth * devicePixelRatio;
-  const h = c.height = 34 * devicePixelRatio;
+  const [w, h] = sizeCanvas(c, 34);
   ctx.clearRect(0, 0, w, h);
   const t = state.track; if (!t) return;
   ctx.font = `${12 * devicePixelRatio}px sans-serif`; ctx.textBaseline = 'middle';
@@ -109,8 +113,7 @@ function drawLyrics() {
 // --- overview strip -----------------------------------------------------
 function drawOverview() {
   const c = els.overview, ctx = c.getContext('2d');
-  const w = c.width = c.clientWidth * devicePixelRatio;
-  const h = c.height = 46 * devicePixelRatio;
+  const [w, h] = sizeCanvas(c, 46);
   ctx.clearRect(0, 0, w, h);
   const t = state.track; if (!t) return;
   ctx.fillStyle = '#eef1f5'; ctx.fillRect(0, 0, w, h);
@@ -219,6 +222,7 @@ function wirePointer() {
   });
   // main canvas: click region = play from region start; hover = tooltip
   els.main.addEventListener('click', (e) => {
+    els.tooltip.style.display = 'none';
     const r = regionAt(e);
     seekTo(r ? r.start : state.t0 + e.offsetX / els.main.clientWidth * WIN_SEC);
   });

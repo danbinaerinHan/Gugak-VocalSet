@@ -60,9 +60,9 @@ async function initGallery() {
             }
             playingSnippet = { audio, btn: e.target };
             audio.currentTime = 0; audio.play(); e.target.textContent = '⏸';
-            audio.onended = () => { e.target.textContent = '▶'; };
+            audio.onended = () => { e.target.textContent = '▶'; playingSnippet = null; };
           } else {
-            audio.pause(); e.target.textContent = '▶';
+            audio.pause(); e.target.textContent = '▶'; playingSnippet = null;
           }
         });
         snips.appendChild(chip);

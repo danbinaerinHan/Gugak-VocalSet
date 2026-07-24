@@ -8,6 +8,7 @@ const state = {
   playing: false,
 };
 const els = {};
+const cqtTiles = new Map();   // "trackId_idx" -> Image
 
 function buildDOM() {
   const v = document.querySelector('#viewer');
@@ -124,7 +125,28 @@ function drawOverview() {
   ctx.fillStyle = '#d33'; ctx.fillRect(now / dur * w - 1, 0, 2, h);
 }
 
-function drawCQT() {}   // placeholder body — implemented in Task 11
+function drawCQT(ctx, w, h) {
+  const m = state.cqtManifest?.[state.track.id];
+  if (!m) return;
+  const t1 = state.t0 + WIN_SEC;
+  const first = Math.floor(state.t0 / m.tile_sec), last = Math.floor(t1 / m.tile_sec);
+  for (let i = Math.max(0, first); i <= Math.min(last, m.n_tiles - 1); i++) {
+    const key = `${state.track.id}_${i}`;
+    let img = cqtTiles.get(key);
+    if (!img) {
+      img = new Image();
+      img.onload = redraw;
+      img.src = `assets/cqt/${state.track.id}_${String(i).padStart(3, '0')}.png`;
+      cqtTiles.set(key, img);
+    }
+    if (!img.complete || !img.naturalWidth) continue;
+    const x0 = xOf(i * m.tile_sec, w);
+    const tileW = m.tile_sec / WIN_SEC * w;
+    ctx.globalAlpha = 0.5;
+    ctx.drawImage(img, x0, 0, tileW * (img.naturalWidth / (m.px_per_sec * m.tile_sec)), h);
+    ctx.globalAlpha = 1;
+  }
+}
 
 function redraw() { drawOverview(); drawLyrics(); drawMain(); updateTime(); }
 
@@ -225,7 +247,16 @@ function wirePointer() {
     redraw();
   }
 }
-function wireCQT() {}        // placeholder — Task 11
+function wireCQT() {
+  els.cqt.addEventListener('change', async () => {
+    state.cqtOn = els.cqt.checked;
+    if (state.cqtOn && !state.cqtManifest) {
+      try { state.cqtManifest = await fetch('assets/cqt/manifest.json').then(r => r.json()); }
+      catch { state.cqtManifest = {}; }
+    }
+    redraw();
+  });
+}
 window.VIEWER = { state, els, redraw, drawCQT, wirePlayback, wirePointer, wireCQT, xOf, WIN_SEC };
 
 document.addEventListener('tracks-ready', init);

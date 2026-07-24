@@ -9,7 +9,7 @@
 <body>
 <nav id="topnav">
   <span class="brand">Gugak-VocalSet</span>
-  <a href="#listen">Listen</a><a href="#explore">Explore</a>
+  <a href="#about">About</a><a href="#listen">Listen</a><a href="#explore">Explore</a>
   <a href="#ontology">Sigimsae</a><a href="#paper">Paper</a><a href="#download">Download</a>
 </nav>
 
@@ -30,6 +30,20 @@
 </header>
 
 <main>
+  <section id="about"><h2>About the Dataset <span class="kr" lang="ko">데이터셋 소개</span></h2>
+    <p>Gugak-VocalSet is the first publicly available audio dataset for Korean traditional
+       singing with dense annotations of <em>sigimsae</em> — the continuous pitch-level vocal
+       expression that constitutes the melodic identity of Korean traditional vocal music.
+       The corpus spans two top-level genres, <b>Jeongak</b> <span class="kr" lang="ko">정악</span> and
+       <b>Minsogak</b> <span class="kr" lang="ko">민속악</span>, across four mid-level categories by musical
+       function — court music (Gungjung), literati music (Pungnyu), Pansori, and folk song
+       (Minyo) — performed by 20 professional singers in a controlled studio environment
+       with fixed key and tempo.</p>
+    <img class="fig" style="width:min(680px,100%)" src="assets/figures/GugakGenre.png"
+         alt="Gugak-VocalSet genre hierarchy: 102 Jeongak and 203 Minsogak tracks across four mid-level categories with representative sub-genres">
+    <p class="figcap">Genre hierarchy of Gugak-VocalSet, with track counts at each level.</p>
+  </section>
+
   <section id="listen"><h2>Listen <span class="kr" lang="ko">듣기</span></h2>
     <div id="track-cards" class="cards"></div></section>
 
@@ -43,8 +57,8 @@
     <div id="paper-content">
       <p><em>Abstract.</em> We present Gugak-VocalSet, the first publicly available audio dataset for Korean traditional singing with dense annotations of <em>sigimsae</em>, a structured pitch contour system of vocal expressions. Gugak-VocalSet contains 24.5 hours of unaccompanied solo vocal recordings across 300 pieces (305 tracks) of representative repertoire curated by the National Gugak Center, performed by 20 professional singers in a controlled studio environment with fixed key and tempo. In addition to genre, lyrics, and mood/timbre tags, the dataset provides a unified sigimsae ontology and approximately 68,000 segments (71,700 instances including multi-label) of audio-grounded sigimsae annotations; the ontology adopts a functional-position-based hierarchy designed for consistent application across genres, and 12 expert annotators specializing in Korean traditional music performed segment-level labeling accordingly. Baseline experiments on sigimsae classification and event detection show that domain-informed F0 representations remain competitive with, and on classification surpass, frozen probing of a general-purpose music foundation model, while pitch and spectral cues play complementary roles in event-level detection.</p>
 
-      <p style="text-align:center"><img src="assets/figures/GugakGenre.png" style="max-width:100%" alt="Gugak-VocalSet genre hierarchy"></p>
-      <p style="text-align:center"><img src="assets/figures/AnnotationExam.png" style="max-width:100%" alt="Annotation example: lyrics, F0 contour, sigimsae regions"></p>
+      <img class="fig" style="width:min(760px,100%)" src="assets/figures/AnnotationExam.png" alt="Annotation example: lyrics, F0 contour, sigimsae regions">
+      <p class="figcap">Three layers of time-aligned annotation: phrase-level lyrics (top), F0 contour over the spectrogram (middle), and sigimsae regions color-coded by functional group (bottom).</p>
 
       <h3>17-category sigimsae classification (genre-stratified 80/10/10, 5-fold CV)</h3>
       <div class="tablewrap"><table class="bench">
@@ -85,8 +99,10 @@
       <p class="caption">Sigimsae event detection on the 17-category ontology: frame-level macro F1, event-level F1 (onset matching within ±200ms), and segment-level F1 (IoU ≥ 0.5). MERT-family models report the best layer among L5-L12. EDTCN(f0) attains the highest frame-level Macro F1, while EDTCN(mel) and the frozen MERT probes lead on event- and segment-level metrics, indicating pitch and spectral cues play complementary roles in event-level detection.</p>
 
       <h3>Label statistics</h3>
-      <p style="text-align:center"><img src="assets/figures/sigimsae_count.png" style="max-width:100%" alt="Annotation count per sigimsae type (log scale)"></p>
-      <p style="text-align:center"><img src="assets/figures/sigimsae_dur.png" style="max-width:100%" alt="Duration distribution per sigimsae type"></p>
+      <img class="fig" style="width:min(720px,100%)" src="assets/figures/sigimsae_count.png" alt="Annotation count per sigimsae type (log scale)">
+      <p class="figcap">Instance count per sigimsae type (log scale), grouped by functional position.</p>
+      <img class="fig" style="width:min(720px,100%)" src="assets/figures/sigimsae_dur.png" alt="Duration distribution per sigimsae type">
+      <p class="figcap">Duration distribution per type; vibrato types are notably longer than non-vibrato ornaments.</p>
     </div></section>
 
   <section id="download"><h2>Download &amp; Citation</h2>

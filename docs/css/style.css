@@ -63,6 +63,10 @@ section h2 { border-bottom: 2px solid var(--line); padding-bottom: .4rem; }
 .snip canvas { width: 120px; height: 44px; }
 .snip button { width: 2rem; height: 2rem; border-radius: 50%; }
 
+.fig { display: block; margin: 1.4rem auto 0; height: auto; max-width: 100%; }
+.figcap { text-align: center; color: var(--muted); font-size: .85rem;
+  max-width: 44rem; margin: .5rem auto 1.4rem; }
+
 table.bench { border-collapse: collapse; width: 100%; font-size: .9rem; margin: 1rem 0; }
 table.bench th, table.bench td { border: 1px solid var(--line); padding: .35rem .6rem; text-align: right; }
 table.bench th:first-child, table.bench td:first-child { text-align: left; }

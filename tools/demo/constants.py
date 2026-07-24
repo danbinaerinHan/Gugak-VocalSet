@@ -1,0 +1,40 @@
+"""Demo-page ontology constants. Exported to docs/assets/ontology.json for the JS side."""
+
+GROUPS = ["onset", "vibrato", "mid", "offset", "accent", "transition"]
+
+# Functional-group palette — matches the paper's AnnotationExam figure legend
+# (onset blue, mid-note purple, vibrato orange, offset green, accent yellow, transition pink)
+GROUP_COLORS = {
+    "onset":      "#4C72B0",
+    "vibrato":    "#DD8452",
+    "mid":        "#8172B2",
+    "offset":     "#55A868",
+    "accent":     "#CCB974",
+    "transition": "#DA8BC3",
+}
+
+GROUP_LABELS_EN = {
+    "onset": "Onset (앞시김새)", "vibrato": "Vibrato (요성)", "mid": "Mid-note (중간 시김새)",
+    "offset": "Offset (뒷시김새)", "accent": "Accent (강조 시김새)", "transition": "Transition (경과 시김새)",
+}
+
+# Keyed by the exact Korean label used in raw_json sigimsage_types
+SIGIMSAE_TYPES = {
+    "밀어내기":            {"group": "onset",      "roman": "mireonaegi",                 "en": "onset ascending slide"},
+    "꺾어내기":            {"group": "onset",      "roman": "kkeokkeonaegi",              "en": "onset descending flick"},
+    "감아내기(위)":        {"group": "onset",      "roman": "gamanaegi (wi)",             "en": "onset upper turn"},
+    "감아내기(아래)":      {"group": "onset",      "roman": "gamanaegi (arae)",           "en": "onset lower turn"},
+    "보통 요성":           {"group": "vibrato",    "roman": "botong yoseong",             "en": "standard vibrato"},
+    "격한 요성":           {"group": "vibrato",    "roman": "gyeokhan yoseong",           "en": "wide vibrato"},
+    "아래로 향하는 요성":  {"group": "vibrato",    "roman": "araero hyanghaneun yoseong", "en": "lower-centered vibrato"},
+    "흘러내리는 요성":     {"group": "vibrato",    "roman": "heulleonaerineun yoseong",   "en": "descending-tail vibrato"},
+    "굴려내기(위)":        {"group": "mid",        "roman": "gullyeonaegi (wi)",          "en": "mid-note upper roll"},
+    "굴려내기(아래)":      {"group": "mid",        "roman": "gullyeonaegi (arae)",        "en": "mid-note lower roll"},
+    "추성":                {"group": "offset",     "roman": "chuseong",                   "en": "offset ascending slide"},
+    "퇴성":                {"group": "offset",     "roman": "toeseong",                   "en": "offset descending slide"},
+    "끝굴려내기(위)":      {"group": "offset",     "roman": "kkeutgullyeonaegi (wi)",     "en": "offset roll-back"},
+    "끝굴려내기(아래)":    {"group": "offset",     "roman": "kkeutgullyeonaegi (arae)",   "en": "offset lower roll-away"},
+    "끊어내기":            {"group": "offset",     "roman": "kkeuneonaegi",               "en": "offset sharp cut"},
+    "전성":                {"group": "accent",     "roman": "jeonseong",                  "en": "upward-accented vibrato"},
+    "채올리기":            {"group": "transition", "roman": "chaeolligi",                 "en": "transition upward snap"},
+}

@@ -13,6 +13,18 @@
 !sample/
 !sample/**
 
+# Demo page (GitHub Pages) + precompute pipeline
+!docs/
+!docs/**
+docs/superpowers/
+!tools/
+!tools/demo/
+!tools/demo/*.py
+!tools/build_demo_assets.py
+!tests/
+!tests/**/
+!tests/**/*.py
+
 # Experiment code (Python sources only)
 !src/
 !src/**/

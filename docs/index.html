@@ -65,7 +65,7 @@
         <thead><tr><th>Model</th><th>Input</th><th>Macro F1</th><th>Weighted F1</th></tr></thead>
         <tbody>
           <tr><td colspan="4"><em>Task-specific CNNs (trained from scratch)</em></td></tr>
-          <tr><td>F0CNN</td><td>F0 contour</td><td>.433 ± .019</td><td>.527 ± .025</td></tr>
+          <tr><td>F0CNN</td><td>F0 contour</td><td>.441 ± .015</td><td>.530 ± .022</td></tr>
           <tr><td>MelCNN</td><td>Mel spec</td><td>.400 ± .018</td><td>.510 ± .025</td></tr>
           <tr><td colspan="4"><em>Frozen foundation models (best layer, MARBLE 2-layer MLP probe)</em></td></tr>
           <tr><td>MERT-v1<sub>95M</sub> (L7)</td><td>MERT emb.</td><td>.358 ± .011</td><td>.454 ± .017</td></tr>
@@ -73,18 +73,18 @@
           <tr><td>CultureMERT<sub>95M</sub> (L5)</td><td>MERT emb.</td><td>.316 ± .017</td><td>.410 ± .019</td></tr>
         </tbody>
       </table></div>
-      <p class="caption">17-category sigimsae classification (song-level, genre-stratified 80/10/10 split, mean ± std over 5-fold CV). F0CNN (Macro F1 .433) matches or slightly surpasses MelCNN (.400), indicating the F0 contour alone captures most of the discriminative signal. Frozen MERT-v1<sub>95M</sub> peaks at .358 (L7), and its culturally-adapted variants CultureMERT-TA<sub>95M</sub> and CultureMERT<sub>95M</sub> underperform it at every probed layer. MERT-family models report the best layer among L5-L12.</p>
+      <p class="caption">17-category sigimsae classification (song-level, genre-stratified 80/10/10 split, mean ± std over 5-fold CV). F0CNN (Macro F1 .441) surpasses MelCNN (.400), indicating the F0 contour alone captures most of the discriminative signal. Frozen MERT-v1<sub>95M</sub> peaks at .358 (L7), and its culturally-adapted variants CultureMERT-TA<sub>95M</sub> and CultureMERT<sub>95M</sub> underperform it at every probed layer. MERT-family models report the best layer among L5-L12.</p>
 
       <h3>Cross-genre transfer (Jeongak ↔ Minsogak)</h3>
       <div class="tablewrap"><table class="bench">
         <thead><tr><th rowspan="2">Direction</th><th colspan="2">Within</th><th colspan="2">Cross</th></tr>
           <tr><th>M.F1</th><th>Acc</th><th>M.F1</th><th>Acc</th></tr></thead>
         <tbody>
-          <tr><td>Jeongak → Minsogak</td><td>.418 ± .005</td><td>.553 ± .005</td><td>.275 ± .001</td><td>.426 ± .002</td></tr>
-          <tr><td>Minsogak → Jeongak</td><td>.346 ± .010</td><td>.506 ± .014</td><td>.285 ± .008</td><td>.434 ± .024</td></tr>
+          <tr><td>Jeongak → Minsogak</td><td>.423 ± .007</td><td>.558 ± .005</td><td>.279 ± .002</td><td>.429 ± .010</td></tr>
+          <tr><td>Minsogak → Jeongak</td><td>.354 ± .004</td><td>.500 ± .006</td><td>.286 ± .013</td><td>.432 ± .035</td></tr>
         </tbody>
       </table></div>
-      <p class="caption">F0CNN, 17-category ontology, 5-fold CV, 102 songs per genre (matched), mean ± std over 3 seeds. Cross-genre Macro F1 drops 34.2% for Jeongak→Minsogak and 17.6% for Minsogak→Jeongak relative to within-genre, well above chance and indicating a shared acoustic foundation across the two traditions.</p>
+      <p class="caption">F0CNN, 17-category ontology, 5-fold CV, 102 songs per genre (matched), mean ± std over 3 seeds. Cross-genre Macro F1 drops 34.0% for Jeongak→Minsogak and 19.2% for Minsogak→Jeongak relative to within-genre, well above chance and indicating a shared acoustic foundation across the two traditions.</p>
 
       <h3>Event detection (17-category)</h3>
       <div class="tablewrap"><table class="bench">

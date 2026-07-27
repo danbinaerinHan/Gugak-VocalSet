@@ -1,4 +1,8 @@
-from tools.demo.constants import SIGIMSAE_TYPES, GROUPS, GROUP_COLORS
+from pathlib import Path
+
+import pytest
+
+from tools.demo.constants import SIGIMSAE_TYPES, GROUPS, GROUP_COLORS, CONTOUR_H_CM
 
 def test_seventeen_types_and_group_sizes():
     assert len(SIGIMSAE_TYPES) == 17
@@ -16,3 +20,21 @@ def test_every_type_fully_described():
 
 def test_groups_have_unique_colors():
     assert len(set(GROUP_COLORS.values())) == len(GROUPS)
+
+
+def test_every_type_carries_the_papers_symbol_and_description():
+    slugs = set()
+    for kr, t in SIGIMSAE_TYPES.items():
+        assert t["slug"] and t["desc"], kr
+        assert 0 < t["sym_h_cm"] <= CONTOUR_H_CM, kr
+        slugs.add(t["slug"])
+    assert len(slugs) == 17          # one distinct art pair per type
+
+
+def test_ontology_art_files_exist():
+    figures = Path(__file__).resolve().parents[2] / "ismir2026paper" / "figures"
+    if not figures.exists():
+        pytest.skip("paper figures not checked out")
+    for kr, t in SIGIMSAE_TYPES.items():
+        for kind in ("symbols", "contours"):
+            assert (figures / f"sigimsae_{kind}" / f"{t['slug']}.png").exists(), f"{kr}/{kind}"

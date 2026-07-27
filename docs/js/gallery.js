@@ -2,6 +2,20 @@
 (() => {
 let playingSnippet = null;   // {audio, btn} of the currently playing chip
 
+const esc = s => String(s).replace(/[&<>"]/g, c =>
+  ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+// notation symbol + pitch contour, at the heights they are typeset at in the paper
+function ontologyArt(t, cmPx, contourCm) {
+  if (!t.slug) return '';
+  return `<div class="art">
+      <img class="sym" src="assets/sigimsae/symbols/${t.slug}.png" alt=""
+           style="height:${(t.sym_h_cm * cmPx).toFixed(1)}px">
+      <img class="contour" src="assets/sigimsae/contours/${t.slug}.png" alt="pitch contour"
+           style="height:${(contourCm * cmPx).toFixed(1)}px">
+    </div>`;
+}
+
 function miniContour(canvas, snip, color) {
   const ctx = canvas.getContext('2d');
   const w = canvas.width = 120 * devicePixelRatio, h = canvas.height = 44 * devicePixelRatio;
@@ -33,16 +47,24 @@ async function initGallery() {
   for (const g of o.groups) {
     const block = document.createElement('div');
     block.className = 'group-block';
-    block.innerHTML = `<h3><span class="sw" style="background:${o.group_colors[g]}"></span> ${o.group_labels[g]}</h3>`;
+    block.innerHTML = `<h3><span class="sw" style="background:${o.group_colors[g]}"></span> ${o.group_labels[g]}</h3>
+      <div class="type-grid"></div>`;
+    const grid = block.querySelector('.type-grid');
     for (const [kr, t] of Object.entries(o.types)) {
       if (t.group !== g) continue;
       const entry = data[kr] ?? { count: 0, snippets: [] };
       const card = document.createElement('div');
       card.className = 'type-card';
       card.style.borderLeftColor = o.group_colors[g];
+      const hanja = t.hanja ? `<span class="hanja">${t.hanja}</span>` : '';
       card.innerHTML = `
-        <div class="names"><span class="count">${entry.count.toLocaleString()} instances</span>
-          <b>${kr}</b><span class="roman">${t.roman}</span>${t.en}</div>
+        <div class="names">
+          <span class="title"><b>${kr}</b>${hanja}<span class="en">${t.en}</span></span>
+          <span class="count">${entry.count.toLocaleString()} instances</span></div>
+        <div class="typebody">
+          ${ontologyArt(t, o.cm_px ?? 74, o.contour_h_cm ?? 0.6)}
+          <p class="desc">${esc(t.desc ?? '')}</p>
+        </div>
         <div class="snips"></div>`;
       const snips = card.querySelector('.snips');
       for (const s of entry.snippets) {
@@ -68,7 +90,7 @@ async function initGallery() {
         snips.appendChild(chip);
         miniContour(chip.querySelector('canvas'), s, o.group_colors[g]);
       }
-      block.appendChild(card);
+      grid.appendChild(card);
     }
     holder.appendChild(block);
   }

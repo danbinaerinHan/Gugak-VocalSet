@@ -18,23 +18,81 @@ GROUP_LABELS_EN = {
     "offset": "Offset (뒷시김새)", "accent": "Accent (강조 시김새)", "transition": "Transition (경과 시김새)",
 }
 
-# Keyed by the exact Korean label used in raw_json sigimsage_types
+# Keyed by the exact Korean label used in raw_json sigimsage_types.
+#
+# `slug` names the notation-symbol and pitch-contour PNGs shipped under
+# docs/assets/sigimsae/. `desc` and `sym_h_cm` (the symbol's typeset height, which differs
+# per type and carries meaning) are lifted verbatim from the paper's ontology table, so the
+# page and Figure 2 stay in sync. Edit them together.
 SIGIMSAE_TYPES = {
-    "밀어내기":            {"group": "onset",      "roman": "mireonaegi",                 "en": "onset ascending slide"},
-    "꺾어내기":            {"group": "onset",      "roman": "kkeokkeonaegi",              "en": "onset descending flick"},
-    "감아내기(위)":        {"group": "onset",      "roman": "gamanaegi (wi)",             "en": "onset upper turn"},
-    "감아내기(아래)":      {"group": "onset",      "roman": "gamanaegi (arae)",           "en": "onset lower turn"},
-    "보통 요성":           {"group": "vibrato",    "roman": "botong yoseong",             "en": "standard vibrato"},
-    "격한 요성":           {"group": "vibrato",    "roman": "gyeokhan yoseong",           "en": "wide vibrato"},
-    "아래로 향하는 요성":  {"group": "vibrato",    "roman": "araero hyanghaneun yoseong", "en": "lower-centered vibrato"},
-    "흘러내리는 요성":     {"group": "vibrato",    "roman": "heulleonaerineun yoseong",   "en": "descending-tail vibrato"},
-    "굴려내기(위)":        {"group": "mid",        "roman": "gullyeonaegi (wi)",          "en": "mid-note upper roll"},
-    "굴려내기(아래)":      {"group": "mid",        "roman": "gullyeonaegi (arae)",        "en": "mid-note lower roll"},
-    "추성":                {"group": "offset",     "roman": "chuseong",                   "en": "offset ascending slide"},
-    "퇴성":                {"group": "offset",     "roman": "toeseong",                   "en": "offset descending slide"},
-    "끝굴려내기(위)":      {"group": "offset",     "roman": "kkeutgullyeonaegi (wi)",     "en": "offset roll-back"},
-    "끝굴려내기(아래)":    {"group": "offset",     "roman": "kkeutgullyeonaegi (arae)",   "en": "offset lower roll-away"},
-    "끊어내기":            {"group": "offset",     "roman": "kkeuneonaegi",               "en": "offset sharp cut"},
-    "전성":                {"group": "accent",     "roman": "jeonseong",                  "en": "upward-accented vibrato"},
-    "채올리기":            {"group": "transition", "roman": "chaeolligi",                 "en": "transition upward snap"},
+    "밀어내기": {
+        "group": "onset", "roman": "mireonaegi", "en": "onset ascending slide",
+        "slug": "onset_ascending_slide", "sym_h_cm": 0.30,
+        "desc": "Sliding up from a lower pitch to the main note"},
+    "꺾어내기": {
+        "group": "onset", "roman": "kkeokkeonaegi", "en": "onset descending flick",
+        "slug": "onset_descending_flick", "sym_h_cm": 0.30,
+        "desc": "Briefly touching a higher pitch before flicking down to the main note"},
+    "감아내기(위)": {
+        "group": "onset", "roman": "gamanaegi (wi)", "en": "onset upper turn",
+        "slug": "onset_upper_turn", "sym_h_cm": 0.30,
+        "desc": "Winding upward, passing through a higher pitch, then returning to the main note"},
+    "감아내기(아래)": {
+        "group": "onset", "roman": "gamanaegi (arae)", "en": "onset lower turn",
+        "slug": "onset_lower_turn", "sym_h_cm": 0.30,
+        "desc": "Winding downward, passing through a lower pitch, then returning to the main note"},
+    "보통 요성": {
+        "group": "vibrato", "roman": "botong yoseong", "en": "standard vibrato",
+        "slug": "standard_vibrato", "sym_h_cm": 0.24,
+        "desc": "Continuously oscillating above and below the main note (<4th)"},
+    "격한 요성": {
+        "group": "vibrato", "roman": "gyeokhan yoseong", "en": "wide vibrato",
+        "slug": "wide_vibrato", "sym_h_cm": 0.34,
+        "desc": "Vigorously oscillating above and below the main note (≥4th)"},
+    "아래로 향하는 요성": {
+        "group": "vibrato", "roman": "araero hyanghaneun yoseong", "en": "lower-centered vibrato",
+        "slug": "lower_centered_vibrato", "sym_h_cm": 0.22,
+        "desc": "Oscillating predominantly below the main note; settles back on it"},
+    "흘러내리는 요성": {
+        "group": "vibrato", "roman": "heulleonaerineun yoseong", "en": "descending-tail vibrato",
+        "slug": "descending_tail_vibrato", "sym_h_cm": 0.37,
+        "desc": "Oscillating while gradually descending"},
+    "굴려내기(위)": {
+        "group": "mid", "roman": "gullyeonaegi (wi)", "en": "mid-note upper roll",
+        "slug": "mid_note_upper_roll", "sym_h_cm": 0.34,
+        "desc": "Briefly touching a pitch above the main note as ornament"},
+    "굴려내기(아래)": {
+        "group": "mid", "roman": "gullyeonaegi (arae)", "en": "mid-note lower roll",
+        "slug": "mid_note_lower_roll", "sym_h_cm": 0.34,
+        "desc": "Briefly touching a pitch below the main note as ornament"},
+    "추성": {
+        "group": "offset", "roman": "chuseong", "en": "offset ascending slide", "hanja": "推聲",
+        "slug": "offset_ascending_slide", "sym_h_cm": 0.30,
+        "desc": "Sliding upward from the main note toward the end"},
+    "퇴성": {
+        "group": "offset", "roman": "toeseong", "en": "offset descending slide", "hanja": "退聲",
+        "slug": "offset_descending_slide", "sym_h_cm": 0.25,
+        "desc": "Sliding downward from the main note toward the end"},
+    "끝굴려내기(위)": {
+        "group": "offset", "roman": "kkeutgullyeonaegi (wi)", "en": "offset roll-back",
+        "slug": "offset_roll_back", "sym_h_cm": 0.34,
+        "desc": "Rolling through pitches above the main note, returning to it"},
+    "끝굴려내기(아래)": {
+        "group": "offset", "roman": "kkeutgullyeonaegi (arae)", "en": "offset lower roll-away",
+        "slug": "offset_lower_roll_away", "sym_h_cm": 0.34,
+        "desc": "Rolling through pitches below the main note, descending away"},
+    "끊어내기": {
+        "group": "offset", "roman": "kkeuneonaegi", "en": "offset sharp cut",
+        "slug": "offset_sharp_cut", "sym_h_cm": 0.30,
+        "desc": "Abruptly cutting off the tone"},
+    "전성": {
+        "group": "accent", "roman": "jeonseong", "en": "upward accent", "hanja": "轉聲",
+        "slug": "upward_accented_vibrato", "sym_h_cm": 0.30,
+        "desc": "Rapidly striking upward to accentuate the main note"},
+    "채올리기": {
+        "group": "transition", "roman": "chaeolligi", "en": "transition upward snap",
+        "slug": "transition_upward_snap", "sym_h_cm": 0.30,
+        "desc": "Briefly snapping up above the following note as transition"},
 }
+
+CONTOUR_H_CM = 0.6   # every pitch-contour thumbnail is typeset at this height in the paper

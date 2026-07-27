@@ -17,7 +17,16 @@
   <h1>Gugak-VocalSet</h1>
   <p class="subtitle">A Multi-Genre Studio-Quality Dataset of Korean Traditional Singing with Sigimsae Annotations
     <span class="kr" lang="ko">시김새 주석을 갖춘 한국 전통 성악 데이터셋</span></p>
-  <p class="authors"><!-- AUTHORS: fill in upon publication --></p>
+  <p class="venue">Accepted to <b>ISMIR 2026</b> · Abu Dhabi, UAE</p>
+  <p class="authors">
+    Danbinaerin Han<sup>1</sup>, Wonil Kim<sup>2</sup>, Seah Hong<sup>3</sup>, Dongju Moon<sup>2</sup>,<br>
+    Jaeok Lee<sup>3</sup>, Jongpil Lee<sup>2</sup>, Chaewon Kim<sup>3</sup>, Juhan Nam<sup>1</sup>
+  </p>
+  <p class="affils">
+    <sup>1</sup>KAIST, Republic of Korea &nbsp;·&nbsp;
+    <sup>2</sup>Neutune, Republic of Korea &nbsp;·&nbsp;
+    <sup>3</sup>National Gugak Center, Republic of Korea
+  </p>
   <p class="badges">
     <a class="badge" href="#">Paper (PDF)</a>
     <a class="badge" href="#">GitHub</a><!-- GITHUB LINK: restore repository URL upon publication -->
@@ -31,32 +40,61 @@
 
 <main>
   <section id="about"><h2>About the Dataset <span class="kr" lang="ko">데이터셋 소개</span></h2>
-    <p>Gugak-VocalSet is the first publicly available audio dataset for Korean traditional
-       singing with dense annotations of <em>sigimsae</em> — the continuous pitch-level vocal
-       expression that constitutes the melodic identity of Korean traditional vocal music.
-       The corpus spans two top-level genres, <b>Jeongak</b> <span class="kr" lang="ko">정악</span> and
+    <p class="lede">Gugak-VocalSet is the first publicly available audio dataset for Korean
+       traditional singing with dense annotations of <em>sigimsae</em>
+       <span class="kr" lang="ko">시김새</span> — the continuous pitch-level vocal expression that
+       constitutes the melodic identity of Korean traditional vocal music.</p>
+    <p>It contains <b>24.5 hours</b> of unaccompanied solo singing across 300 pieces
+       (305 tracks) of representative repertoire curated by the National Gugak Center,
+       performed by 20 professional singers in a controlled studio environment with fixed
+       key and tempo. Twelve expert annotators in Korean traditional music labeled roughly
+       <b>68,000 sigimsae segments</b> (71,700 instances counting multi-label) against a
+       unified <a href="#ontology">17-type ontology</a> organized by functional position
+       within the melodic line. Each track also carries phrase-level lyrics alignment,
+       genre labels, bilingual captions, and expert mood and timbre tags.</p>
+    <p>The corpus spans two top-level genres, <b>Jeongak</b> <span class="kr" lang="ko">정악</span> and
        <b>Minsogak</b> <span class="kr" lang="ko">민속악</span>, across four mid-level categories by musical
        function — court music (Gungjung), literati music (Pungnyu), Pansori, and folk song
-       (Minyo) — performed by 20 professional singers in a controlled studio environment
-       with fixed key and tempo.</p>
+       (Minyo).</p>
     <img class="fig" style="width:min(680px,100%)" src="assets/figures/GugakGenre.png"
          alt="Gugak-VocalSet genre hierarchy: 102 Jeongak and 203 Minsogak tracks across four mid-level categories with representative sub-genres">
     <p class="figcap">Genre hierarchy of Gugak-VocalSet, with track counts at each level.</p>
   </section>
 
   <section id="listen"><h2>Listen <span class="kr" lang="ko">듣기</span></h2>
+    <p class="note">Pending release clearance, the sample recordings on this page are limited to
+       the <b>first 40 seconds</b> of each track; the durations listed are those of the full
+       recordings. <!-- PREVIEW LIMIT: rebuild with PREVIEW_SEC = None upon clearance --></p>
     <div id="track-cards" class="cards"></div></section>
 
   <section id="explore"><h2>Explore Annotations <span class="kr" lang="ko">어노테이션 탐색</span></h2>
+    <p class="note">The timeline covers the 40-second published excerpt of the selected track.</p>
     <div id="viewer"></div></section>
 
   <section id="ontology"><h2>Sigimsae Ontology <span class="kr" lang="ko">시김새 온톨로지</span></h2>
-    <div id="gallery"></div></section>
+    <p>The 17 sigimsae types of the unified ontology, grouped by functional position within
+       the melodic line, each with its notation symbol, schematic pitch contour, description,
+       corpus frequency, and audio examples drawn from the dataset. Established traditional
+       terms are retained where unambiguous — <span class="kr" lang="ko">추성 推聲</span>,
+       <span class="kr" lang="ko">퇴성 退聲</span>, <span class="kr" lang="ko">전성 轉聲</span>,
+       <span class="kr" lang="ko">요성 搖聲</span> — while the remaining types are named for their
+       contour shape and function, and the symbols visually echo those shapes.</p>
+    <div id="gallery"></div>
+
+    <h3>Label statistics <span class="kr" lang="ko">레이블 통계</span></h3>
+    <div class="statfigs">
+      <figure>
+        <img class="fig" src="assets/figures/sigimsae_count.png" alt="Annotation count per sigimsae type (log scale)">
+        <figcaption class="figcap">Instance count per sigimsae type (log scale), grouped by functional position.</figcaption>
+      </figure>
+      <figure>
+        <img class="fig" src="assets/figures/sigimsae_dur.png" alt="Duration distribution per sigimsae type">
+        <figcaption class="figcap">Duration distribution per type; vibrato types are notably longer than non-vibrato ornaments.</figcaption>
+      </figure>
+    </div></section>
 
   <section id="paper"><h2>Paper &amp; Benchmarks</h2>
     <div id="paper-content">
-      <p><em>Abstract.</em> We present Gugak-VocalSet, the first publicly available audio dataset for Korean traditional singing with dense annotations of <em>sigimsae</em>, a structured pitch contour system of vocal expressions. Gugak-VocalSet contains 24.5 hours of unaccompanied solo vocal recordings across 300 pieces (305 tracks) of representative repertoire curated by the National Gugak Center, performed by 20 professional singers in a controlled studio environment with fixed key and tempo. In addition to genre, lyrics, and mood/timbre tags, the dataset provides a unified sigimsae ontology and approximately 68,000 segments (71,700 instances including multi-label) of audio-grounded sigimsae annotations; the ontology adopts a functional-position-based hierarchy designed for consistent application across genres, and 12 expert annotators specializing in Korean traditional music performed segment-level labeling accordingly. Baseline experiments on sigimsae classification and event detection show that domain-informed F0 representations remain competitive with, and on classification surpass, frozen probing of a general-purpose music foundation model, while pitch and spectral cues play complementary roles in event-level detection.</p>
-
       <img class="fig" style="width:min(760px,100%)" src="assets/figures/AnnotationExam.png" alt="Annotation example: lyrics, F0 contour, sigimsae regions">
       <p class="figcap">Three layers of time-aligned annotation: phrase-level lyrics (top), F0 contour over the spectrogram (middle), and sigimsae regions color-coded by functional group (bottom).</p>
 
@@ -98,32 +136,38 @@
       </table></div>
       <p class="caption">Sigimsae event detection on the 17-category ontology: frame-level macro F1, event-level F1 (onset matching within ±200ms), and segment-level F1 (IoU ≥ 0.5). MERT-family models report the best layer among L5-L12. EDTCN(f0) attains the highest frame-level Macro F1, while EDTCN(mel) and the frozen MERT probes lead on event- and segment-level metrics, indicating pitch and spectral cues play complementary roles in event-level detection.</p>
 
-      <h3>Label statistics</h3>
-      <img class="fig" style="width:min(720px,100%)" src="assets/figures/sigimsae_count.png" alt="Annotation count per sigimsae type (log scale)">
-      <p class="figcap">Instance count per sigimsae type (log scale), grouped by functional position.</p>
-      <img class="fig" style="width:min(720px,100%)" src="assets/figures/sigimsae_dur.png" alt="Duration distribution per sigimsae type">
-      <p class="figcap">Duration distribution per type; vibrato types are notably longer than non-vibrato ornaments.</p>
     </div></section>
 
   <section id="download"><h2>Download &amp; Citation</h2>
     <div id="download-content">
-      <p>The dataset (24.5 h audio, 305 annotation JSONs, metadata) is distributed under
-         <b>CC BY-NC-SA 4.0</b>; code under <b>MIT</b>.
-         <!-- RELEASE LINK: add the download/Zenodo link upon publication --></p>
-      <p>This repository currently ships a 5-track sample and the complete metadata; see the
+      <p>The full dataset — 24.5 h of audio, 305 annotation JSONs, and the track-level
+         metadata — will be released after publication. Distribution terms and the download
+         location are still being settled with the National Gugak Center and will be
+         announced here.
+         <!-- RELEASE LINK: add the download location once settled -->
+         <!-- LICENSE: dataset and code license terms are undecided as of 2026-07-27.
+              Do not restate a license anywhere on this page until they are agreed. --></p>
+      <p>This repository currently ships a 5-track sample (40-second excerpts pending release
+         clearance) and the complete metadata; see the
          repository README for schemas.<!-- GITHUB LINK: restore repository URL upon publication --></p>
       <h3>Citation</h3>
       <pre class="bibtex" id="bibtex">@inproceedings{gugakvocalset2026,
   title     = {Gugak-VocalSet: A Multi-Genre Studio-Quality Dataset of Korean Traditional Singing with Sigimsae Annotations},
-  author    = {ANONYMOUS — fill in upon publication},
+  author    = {Han, Danbinaerin and Kim, Wonil and Hong, Seah and Moon, Dongju and
+               Lee, Jaeok and Lee, Jongpil and Kim, Chaewon and Nam, Juhan},
   booktitle = {Proc. of the 27th Int. Society for Music Information Retrieval Conf. (ISMIR)},
+  address   = {Abu Dhabi, UAE},
   year      = {2026}
 }</pre>
       <button onclick="navigator.clipboard.writeText(document.querySelector('#bibtex').textContent)">Copy BibTeX</button>
     </div></section>
 </main>
 
-<footer><p>Recordings © National Gugak Center collaboration · Dataset CC BY-NC-SA 4.0 · Code MIT</p></footer>
+<footer>
+  <p>Gugak-VocalSet · Recorded in collaboration with the National Gugak Center</p>
+  <!-- LICENSE: intentionally omitted — dataset/code terms undecided as of 2026-07-27.
+       Add a rights line here only once the agreement with the NGC and the performers is settled. -->
+</footer>
 
 <script src="js/app.js"></script>
 <script src="js/viewer.js"></script>

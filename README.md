@@ -185,6 +185,8 @@ Across 305 tracks / ~69k regions (multi-label regions: ~4.9%):
 
 For double-blind review, this repository ships a **5-track audio + annotation sample** (one per major genre/style group) so reviewers can directly inspect the raw recordings alongside the JSON annotations. The **complete track-level metadata for all 305 tracks is already included** in `metadata.csv`; the remaining 300 audio recordings and annotation JSONs will be released upon publication.
 
+> **Audio excerpts.** Pending release clearance, the shipped `sample/audio/` mp3 files — and the recordings on the demo page — are limited to the **first 40 seconds** of each track. The annotation JSONs cover the full recording; the Duration column below is the full-track length.
+
 | Track ID | Genre | Sub-genre | Title | Singer | Gender | Duration |
 |---|---|---|---|---|---|---|
 | `KC_TM_JC_GJ_P000074` | Jeongak / Gungjung | 제례악 (ritual) | 종묘제례악 중 귀인 (*Gwi-in*, from Jongmyo Jerye-ak) | 이동영 | 남창 | 4:26 |
@@ -197,7 +199,7 @@ Repository layout for these samples:
 
 ```
 sample/
-├── audio/                                  # 5 mp3 files (~58 MB total)
+├── audio/                                  # 5 mp3 files, first 40 s each (~2.7 MB total)
 │   ├── KC_TM_JC_GJ_P000074.mp3
 │   ├── KC_TM_JC_PR_P000001.mp3
 │   ├── KC_TM_MF_PS_P000285.mp3
@@ -217,7 +219,7 @@ The `mp3` and `json` files share the track ID, and both correspond 1-to-1 with t
 
 ## Dataset Release
 
-This repository serves as the anonymous companion site during review. It currently ships the **complete track-level metadata** (`metadata.csv`, 305 rows) and the **5-track sample** described above (`sample/`). The remaining 300 audio recordings and annotation JSONs will be released upon publication.
+This repository serves as the anonymous companion site during review. It currently ships the **complete track-level metadata** (`metadata.csv`, 305 rows) and the **5-track sample** described above (`sample/`, audio limited to 40-second excerpts). The remaining 300 audio recordings and annotation JSONs, and the full-length audio for the 5 sample tracks, will be released upon publication.
 
 ---
 
@@ -267,8 +269,9 @@ configs/                                 # Classification YAML configs (see base
 
 ## License
 
-- **Code:** released under the MIT License (see `LICENSE`).
-- **Dataset:** distributed under CC BY-NC-SA 4.0. Recordings were made under agreements with the performers and the National Gugak Center.
+Licensing terms for both the dataset and the code are **not yet finalized** and will be stated here once settled. Until then, please do not redistribute the sample recordings.
+
+Recordings were made under agreements with the performers and the National Gugak Center.
 
 ---
 

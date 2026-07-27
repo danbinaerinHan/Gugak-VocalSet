@@ -36,6 +36,9 @@ function buildDOM() {
   els.tooltip = document.querySelector('#tooltip');
 }
 
+// only the first `preview_sec` of each track is published — the timeline ends there
+const spanOf = t => t.preview_sec ?? t.duration_sec;
+const clampT0 = sec => Math.max(0, Math.min(sec, spanOf(state.track) - WIN_SEC));
 const groupOf = kr => window.DEMO.ontology.types[kr]?.group ?? 'onset';
 const colorOf = kr => window.DEMO.ontology.group_colors[groupOf(kr)];
 
@@ -117,7 +120,7 @@ function drawOverview() {
   ctx.clearRect(0, 0, w, h);
   const t = state.track; if (!t) return;
   ctx.fillStyle = '#eef1f5'; ctx.fillRect(0, 0, w, h);
-  const dur = t.duration_sec;
+  const dur = spanOf(t);
   for (const r of t.sigimsae_regions) {          // density: one thin bar per region
     ctx.fillStyle = colorOf(r.types[0]) + '99';
     ctx.fillRect(r.start / dur * w, h * 0.2, Math.max(1, (r.end - r.start) / dur * w), h * 0.6);
@@ -156,7 +159,7 @@ function redraw() { drawOverview(); drawLyrics(); drawMain(); updateTime(); }
 function updateTime() {
   const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
   els.time.textContent = state.track
-    ? `${fmt(els.audio.currentTime)} / ${fmt(state.track.duration_sec)}` : '';
+    ? `${fmt(els.audio.currentTime)} / ${fmt(spanOf(state.track))}` : '';
 }
 
 // --- legend -------------------------------------------------------------
@@ -207,7 +210,7 @@ function wirePlayback() {
     const now = els.audio.currentTime;
     // auto-scroll: keep playhead inside the window, jump-scroll at 85%
     if (now > state.t0 + WIN_SEC * 0.85 || now < state.t0) {
-      state.t0 = Math.max(0, now - WIN_SEC * 0.15);
+      state.t0 = clampT0(now - WIN_SEC * 0.15);
     }
     redraw();
     requestAnimationFrame(tick);
@@ -218,7 +221,7 @@ function wirePointer() {
   // overview: click = seek
   els.overview.addEventListener('click', (e) => {
     const frac = e.offsetX / els.overview.clientWidth;
-    seekTo(frac * state.track.duration_sec);
+    seekTo(frac * spanOf(state.track));
   });
   // main canvas: click region = play from region start; hover = tooltip
   els.main.addEventListener('click', (e) => {
@@ -231,7 +234,7 @@ function wirePointer() {
     if (!r) { els.tooltip.style.display = 'none'; return; }
     const o = window.DEMO.ontology;
     els.tooltip.innerHTML = r.types.map(kr =>
-      `<b>${kr}</b> · ${o.types[kr]?.roman ?? ''} · ${o.types[kr]?.en ?? ''}`).join('<br>');
+      `<b>${kr}</b> · ${o.types[kr]?.en ?? ''}`).join('<br>');
     els.tooltip.style.display = 'block';
     els.tooltip.style.left = (e.clientX + 12) + 'px';
     els.tooltip.style.top  = (e.clientY + 12) + 'px';
@@ -245,8 +248,8 @@ function wirePointer() {
       !r.types.every(kr => state.hiddenGroups.has(groupOf(kr))));
   }
   function seekTo(sec) {
-    els.audio.currentTime = Math.max(0, Math.min(sec, state.track.duration_sec - 0.1));
-    state.t0 = Math.max(0, els.audio.currentTime - WIN_SEC * 0.15);
+    els.audio.currentTime = Math.max(0, Math.min(sec, spanOf(state.track) - 0.1));
+    state.t0 = clampT0(els.audio.currentTime - WIN_SEC * 0.15);
     if (els.audio.paused) els.audio.play();
     redraw();
   }
@@ -261,7 +264,7 @@ function wireCQT() {
     redraw();
   });
 }
-window.VIEWER = { state, els, redraw, drawCQT, wirePlayback, wirePointer, wireCQT, xOf, WIN_SEC };
+window.VIEWER = { state, els, redraw, drawCQT, wirePlayback, wirePointer, wireCQT, xOf, spanOf, WIN_SEC };
 
 document.addEventListener('tracks-ready', init);
 })();

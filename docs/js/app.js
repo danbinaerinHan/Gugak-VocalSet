@@ -14,15 +14,22 @@ function genrePath(t) {
   return parts.join(' › ');
 }
 
+const mmss = (s) => {
+  const r = Math.round(s);
+  return `${Math.floor(r / 60)}:${String(r % 60).padStart(2, '0')}`;
+};
+
 function trackCard(t) {
   const card = document.createElement('div');
-  const durS = Math.round(t.duration_sec);
+  // audio is cut to preview_sec pending release clearance; the card still states the true length
+  const preview = t.preview_sec && t.preview_sec < t.duration_sec
+    ? ` · <span class="preview-tag">${Math.round(t.preview_sec)} s preview</span>` : '';
   card.className = 'card';
   card.innerHTML = `
     <h3>${t.title}</h3>
     <div class="meta">${genrePath(t)}<br>
       ${t.singer} (${t.gender}) · ${t.jangdan} · ${t.key} · ${Math.round(t.tempo)} BPM ·
-      ${Math.floor(durS / 60)}:${String(durS % 60).padStart(2, '0')}</div>
+      ${mmss(t.duration_sec)}${preview}</div>
     <audio controls preload="none" src="assets/audio/${t.id}.mp3"></audio>
     <details><summary>Caption <span class="kr">캡션</span></summary>
       <p class="cap-en">${t.caption_en}</p>

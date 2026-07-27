@@ -3,14 +3,15 @@
 
     python3 -m tools.build_demo_assets --stage all
 
-Stages: tracks (demo JSONs + audio copy), cqt (viewer tiles), gallery, ontology.
+Stages: tracks (demo JSONs + audio previews), cqt (viewer tiles), gallery, ontology.
 """
-import argparse, filecmp, json, shutil
+import argparse, json, shutil, subprocess
 from pathlib import Path
 import numpy as np
 import librosa
 
-from tools.demo.constants import SIGIMSAE_TYPES, GROUPS, GROUP_COLORS, GROUP_LABELS_EN
+from tools.demo.constants import (SIGIMSAE_TYPES, GROUPS, GROUP_COLORS, GROUP_LABELS_EN,
+                                  CONTOUR_H_CM)
 from tools.demo.tracks import load_track_index
 from tools.demo.track_json import build_track_payload
 from tools.demo.cqt_tiles import render_tiles
@@ -18,6 +19,9 @@ from tools.demo.gallery import select_exemplars, cut_snippet
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "docs" / "assets"
+SAMPLE_AUDIO = ROOT / "sample" / "audio"
+PAPER_FIGURES = ROOT / "ismir2026paper" / "figures"
+CM_PX = 74   # web rendering of the paper's typeset heights (0.6 cm contour -> ~44 px)
 DEMO_TRACKS = [   # the 5 public sample tracks
     "KC_TM_JC_GJ_P000074", "KC_TM_JC_PR_P000001", "KC_TM_MF_PS_P000285",
     "KC_TM_MF_MY_P000174", "KC_TM_MF_MY_P000103",
@@ -26,6 +30,32 @@ DEMO_TRACKS = [   # the 5 public sample tracks
 GALLERY_OVERRIDES = {}
 
 F0_HOP = 0.01   # RMVPE hop (10 ms)
+# Only the first PREVIEW_SEC of each demo track may be published until the dataset is
+# cleared for release. Everything derived from full-song audio (sample/audio, docs audio,
+# CQT tiles, the F0/regions in the track JSONs) is cut to this window.
+PREVIEW_SEC = 40.0
+MAX_LAG_MS = 5.0   # published preview must start on the same sample as the source
+
+
+def cut_preview(src: Path, dst: Path, sec: float = PREVIEW_SEC) -> None:
+    subprocess.run(
+        ["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), "-t", f"{sec:.3f}",
+         "-codec:a", "libmp3lame", "-qscale:a", "2", str(dst)], check=True)
+
+
+def preview_lag_ms(src: Path, preview: Path, sr: int = 22050, probe_sec: float = 10.0) -> float:
+    """Offset of the re-encoded preview against the source, in ms (should be ~0).
+
+    A silent shift here would desync the F0 contour and the region boundaries from the
+    audio the browser plays, so the build refuses to ship one.
+    """
+    a, _ = librosa.load(src, sr=sr, mono=True, duration=probe_sec)
+    b, _ = librosa.load(preview, sr=sr, mono=True, duration=probe_sec)
+    n = min(len(a), len(b))
+    a, b = a[:n] - a[:n].mean(), b[:n] - b[:n].mean()
+    max_lag = int(sr * MAX_LAG_MS / 1000) * 4
+    xc = np.correlate(np.pad(b, max_lag), a, mode="valid")   # index max_lag == zero lag
+    return (int(np.argmax(xc)) - max_lag) / sr * 1000        # >0: preview lags the source
 
 
 def voiced_ratio(f0_hz, start, end, hop=F0_HOP):
@@ -34,16 +64,14 @@ def voiced_ratio(f0_hz, start, end, hop=F0_HOP):
 
 
 def validate_demo_tracks(index):
+    """KVocSet audio is the single source for every published artifact, previews included."""
     problems = []
     for p_id in DEMO_TRACKS:
         if p_id not in index:
             problems.append(f"{p_id}: missing from total_metadata.csv index")
             continue
-        sample_mp3 = ROOT / "sample" / "audio" / f"{p_id}.mp3"
-        if not sample_mp3.exists():
-            problems.append(f"{p_id}: sample audio missing ({sample_mp3})")
-        elif index[p_id]["audio_path"].exists() and not filecmp.cmp(sample_mp3, index[p_id]["audio_path"], shallow=False):
-            problems.append(f"{p_id}: sample/audio and KVocSet audio differ — CQT/gallery would desync from played audio")
+        if not index[p_id]["audio_path"].exists():
+            problems.append(f"{p_id}: KVocSet audio missing ({index[p_id]['audio_path']})")
     if problems:
         raise SystemExit("demo track validation failed:\n  " + "\n  ".join(problems))
 
@@ -51,24 +79,34 @@ def validate_demo_tracks(index):
 def stage_tracks(index):
     (ASSETS / "tracks").mkdir(parents=True, exist_ok=True)
     (ASSETS / "audio").mkdir(parents=True, exist_ok=True)
+    SAMPLE_AUDIO.mkdir(parents=True, exist_ok=True)
     for p_id in DEMO_TRACKS:
         t = index[p_id]
         ann = json.loads(t["annotation_path"].read_text(encoding="utf-8"))
         f0 = np.load(t["f0_path"]).astype(np.float32)
-        payload = build_track_payload(p_id, t["row"], ann, f0)
+        payload = build_track_payload(p_id, t["row"], ann, f0, preview_sec=PREVIEW_SEC)
         (ASSETS / "tracks" / f"{p_id}.json").write_text(
             json.dumps(payload, ensure_ascii=False), encoding="utf-8")
-        shutil.copy(ROOT / "sample" / "audio" / f"{p_id}.mp3", ASSETS / "audio" / f"{p_id}.mp3")
-        print("tracks:", p_id, len(payload["sigimsae_regions"]), "regions")
+
+        preview = ASSETS / "audio" / f"{p_id}.mp3"
+        cut_preview(t["audio_path"], preview)
+        lag = preview_lag_ms(t["audio_path"], preview)
+        if abs(lag) > MAX_LAG_MS:
+            raise SystemExit(f"{p_id}: preview is {lag:+.1f} ms off the source audio")
+        shutil.copy(preview, SAMPLE_AUDIO / f"{p_id}.mp3")   # sample/ ships the same excerpt
+        print(f"tracks: {p_id} {len(payload['sigimsae_regions'])} regions, "
+              f"{PREVIEW_SEC:.0f}s preview ({lag:+.2f} ms lag)")
     (ASSETS / "tracks" / "manifest.json").write_text(
         json.dumps(DEMO_TRACKS), encoding="utf-8")
 
 
 def stage_cqt(index):
     out = ASSETS / "cqt"; out.mkdir(parents=True, exist_ok=True)
+    for stale in out.glob("*.png"):        # shorter previews leave orphan tiles behind
+        stale.unlink()
     manifests = {}
     for p_id in DEMO_TRACKS:
-        y, sr = librosa.load(index[p_id]["audio_path"], sr=22050, mono=True)
+        y, sr = librosa.load(index[p_id]["audio_path"], sr=22050, mono=True, duration=PREVIEW_SEC)
         manifests[p_id] = render_tiles(y, sr, out, track_id=p_id)
         print("cqt:", p_id, manifests[p_id]["n_tiles"], "tiles")
     (out / "manifest.json").write_text(json.dumps(manifests), encoding="utf-8")
@@ -116,10 +154,22 @@ def stage_gallery(index):
 
 
 def stage_ontology():
+    """Ontology JSON + the notation-symbol / pitch-contour art from the paper's Figure 2."""
     ASSETS.mkdir(parents=True, exist_ok=True)
+    for kind in ("symbols", "contours"):
+        src = PAPER_FIGURES / f"sigimsae_{kind}"
+        dst = ASSETS / "sigimsae" / kind
+        dst.mkdir(parents=True, exist_ok=True)
+        missing = [t["slug"] for t in SIGIMSAE_TYPES.values() if not (src / f"{t['slug']}.png").exists()]
+        if missing:
+            raise SystemExit(f"ontology art missing from {src}: {', '.join(missing)}")
+        for t in SIGIMSAE_TYPES.values():
+            shutil.copy(src / f"{t['slug']}.png", dst / f"{t['slug']}.png")
+        print(f"ontology: {len(SIGIMSAE_TYPES)} {kind}")
     (ASSETS / "ontology.json").write_text(json.dumps({
         "groups": GROUPS, "group_colors": GROUP_COLORS,
         "group_labels": GROUP_LABELS_EN, "types": SIGIMSAE_TYPES,
+        "contour_h_cm": CONTOUR_H_CM, "cm_px": CM_PX,
     }, ensure_ascii=False), encoding="utf-8")
 
 

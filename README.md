@@ -1,9 +1,16 @@
 # Gugak-VocalSet
 
-**A High-quality Korean Traditional Singing Dataset with Sigimsae Annotations**
+**A Multi-Genre Studio-Quality Dataset of Korean Traditional Singing with Sigimsae Annotations**
 
-> This repository accompanies our ISMIR 2026 submission.
-> **Anonymous release for double-blind review.** Author names, affiliations, and any identifying metadata have been removed from the code, documentation, and dataset packaging.
+Accepted to **ISMIR 2026** (Abu Dhabi, UAE).
+Danbinaerin Han, Wonil Kim, Seah Hong, Dongju Moon, Jaeok Lee, Jongpil Lee, Chaewon Kim, Juhan Nam
+— KAIST · Neutune · National Gugak Center
+
+### 🎧 [Interactive demo page →](https://www.danbinaerin.com/Gugak-VocalSet/)
+
+Audio samples, a time-aligned annotation viewer (F0 contour, lyrics, sigimsae regions over
+an optional CQT background), and all 17 sigimsae types with notation symbols, pitch
+contours, and playable examples from the corpus.
 
 ---
 
@@ -183,7 +190,7 @@ Across 305 tracks / ~69k regions (multi-label regions: ~4.9%):
 
 ## Sample Release
 
-For double-blind review, this repository ships a **5-track audio + annotation sample** (one per major genre/style group) so reviewers can directly inspect the raw recordings alongside the JSON annotations. The **complete track-level metadata for all 305 tracks is already included** in `metadata.csv`; the remaining 300 audio recordings and annotation JSONs will be released upon publication.
+This repository ships a **5-track audio + annotation sample** (one per major genre/style group) so the raw recordings can be inspected alongside the JSON annotations. The **complete track-level metadata for all 305 tracks is already included** in `metadata.csv`; the remaining 300 audio recordings and annotation JSONs will be released with the full dataset.
 
 > **Audio excerpts.** Pending release clearance, the shipped `sample/audio/` mp3 files — and the recordings on the demo page — are limited to the **first 40 seconds** of each track. The annotation JSONs cover the full recording; the Duration column below is the full-track length.
 
@@ -219,13 +226,13 @@ The `mp3` and `json` files share the track ID, and both correspond 1-to-1 with t
 
 ## Dataset Release
 
-This repository serves as the anonymous companion site during review. It currently ships the **complete track-level metadata** (`metadata.csv`, 305 rows) and the **5-track sample** described above (`sample/`, audio limited to 40-second excerpts). The remaining 300 audio recordings and annotation JSONs, and the full-length audio for the 5 sample tracks, will be released upon publication.
+This repository is the companion to the paper. It currently ships the **complete track-level metadata** (`metadata.csv`, 305 rows) and the **5-track sample** described above (`sample/`, audio limited to 40-second excerpts). The remaining 300 audio recordings and annotation JSONs, and the full-length audio for the 5 sample tracks, will be released in collaboration with the National Gugak Center; the release location and distribution terms will be announced on the [demo page](https://www.danbinaerin.com/Gugak-VocalSet/).
 
 ---
 
 ## Experiment Code
 
-The `src/` and `configs/` directories ship the experiment code that produced the results in the paper. **The code is provided for reviewer inspection** — it documents the training procedure, model architectures, dataset construction, and evaluation metrics. Some imports reference modules from the original development repository (e.g. `prepare_f0_dataset.py`, `train.py`, `train_event.py`) that are not included in this anonymous release; the canonical 5-fold CV scripts in `src/` are self-explanatory for review purposes.
+The `src/` and `configs/` directories ship the experiment code that produced the results in the paper — the training procedure, model architectures, dataset construction, and evaluation metrics. Some imports reference modules from the original development repository (e.g. `prepare_f0_dataset.py`, `train.py`, `train_event.py`) that are not included here; the canonical 5-fold CV scripts in `src/` are self-contained enough to follow the pipeline.
 
 ### Layout
 
@@ -258,7 +265,7 @@ configs/                                 # Classification YAML configs (see base
 | **Table 3** — Cross-genre transfer (Jeongak ↔ Minsogak) | `src/classification/train_kfold.py` with the cross-genre flags |
 | **Table 4** — 17-category event detection (EDTCN with f0/mel inputs, MERT/CultureMERT probing with BiGRU) | `src/event/train_event_kfold.py` with `--model {EDTCN, MERTHead}` and `--feature-type {f0, mel, mert_hidden}` |
 
-### Notes for reviewers
+### Reproduction notes
 
 - Both training scripts use **per-song stratified 5-fold CV** with a fixed seed, so a single invocation reproduces all five folds reported in the paper.
 - F0 features are extracted with **RMVPE at 10 ms hop**. The `delta_f0` channel is scaled (×10) and clipped inside the dataset class — without this normalization the channel has near-zero variance and is effectively ignored by the first conv layer.
@@ -277,10 +284,13 @@ Recordings were made under agreements with the performers and the National Gugak
 
 ## Citation
 
-Citation information will be provided upon publication. During the review period, please refer to this repository only as the anonymous companion to the ISMIR 2026 submission titled *"Gugak-VocalSet: A High-quality Korean Traditional Singing Dataset with Sigimsae Annotations."*
-
----
-
-## Anonymity Notice for Reviewers
-
-Please do not attempt to de-anonymize this repository. We have scrubbed author names, affiliations, acknowledgements, and identifying commit metadata. Any remaining identifying artifacts are unintentional — we would be grateful if you could notify the program chairs so they can be removed.
+```bibtex
+@inproceedings{gugakvocalset2026,
+  title     = {Gugak-VocalSet: A Multi-Genre Studio-Quality Dataset of Korean Traditional Singing with Sigimsae Annotations},
+  author    = {Han, Danbinaerin and Kim, Wonil and Hong, Seah and Moon, Dongju and
+               Lee, Jaeok and Lee, Jongpil and Kim, Chaewon and Nam, Juhan},
+  booktitle = {Proc. of the 27th Int. Society for Music Information Retrieval Conf. (ISMIR)},
+  address   = {Abu Dhabi, UAE},
+  year      = {2026}
+}
+```

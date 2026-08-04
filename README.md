@@ -3,7 +3,7 @@
 **A Multi-Genre Studio-Quality Dataset of Korean Traditional Singing with Sigimsae Annotations**
 
 Accepted to **ISMIR 2026** (Abu Dhabi, UAE).
-Danbinaerin Han, Wonil Kim, Seah Hong, Dongju Moon, Gwon Soo Lee, Jaeok Lee, Jongpil Lee, Chaewon Kim, Juhan Nam
+Danbinaerin Han, Wonil Kim, Seah Hong, Dongjoo Moon, Jaeok Lee, Gwon Soo Lee, Jongpil Lee, Chaewon Kim, Juhan Nam
 — KAIST · Neutune · National Gugak Center · Korea Culture Information Service Agency
 
 ### 🎧 [Interactive demo page →](https://www.danbinaerin.com/Gugak-VocalSet/)
@@ -19,7 +19,7 @@ contours, and playable examples from the corpus.
 Gugak-VocalSet is the first publicly available audio dataset for Korean traditional singing, with dense annotations of *sigimsae* — the continuous pitch-level vocal expression that constitutes the melodic identity of Korean traditional vocal music.
 
 - **24.5 hours** of unaccompanied solo vocal recordings
-- **300 pieces / 305 tracks** of representative repertoire curated by the National Gugak Center
+- **305 tracks** of representative repertoire curated by the National Gugak Center
 - **20 professional singers**, recorded in a controlled studio environment with fixed key and tempo
 - **~69,000 audio-grounded sigimsae annotations** following a unified **17-type ontology** organized by functional position (onset / mid-note / offset / transition / accent / vibrato)
 - Rich metadata: genre hierarchy, lyrics–audio alignment, Western key, jangdan, tempo, bilingual captions, expert mood & timbre tags
@@ -287,8 +287,8 @@ Recordings were made under agreements with the performers and the National Gugak
 ```bibtex
 @inproceedings{gugakvocalset2026,
   title     = {Gugak-VocalSet: A Multi-Genre Studio-Quality Dataset of Korean Traditional Singing with Sigimsae Annotations},
-  author    = {Han, Danbinaerin and Kim, Wonil and Hong, Seah and Moon, Dongju and
-               Lee, Gwon Soo and Lee, Jaeok and Lee, Jongpil and Kim, Chaewon and
+  author    = {Han, Danbinaerin and Kim, Wonil and Hong, Seah and Moon, Dongjoo and
+               Lee, Jaeok and Lee, Gwon Soo and Lee, Jongpil and Kim, Chaewon and
                Nam, Juhan},
   booktitle = {Proc. of the 27th Int. Society for Music Information Retrieval Conf. (ISMIR)},
   address   = {Abu Dhabi, UAE},

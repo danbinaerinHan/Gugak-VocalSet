@@ -3,8 +3,8 @@
 **A Multi-Genre Studio-Quality Dataset of Korean Traditional Singing with Sigimsae Annotations**
 
 Accepted to **ISMIR 2026** (Abu Dhabi, UAE).
-Danbinaerin Han, Wonil Kim, Seah Hong, Dongjoo Moon, Jaeok Lee, Gwon Soo Lee, Jongpil Lee, Chaewon Kim, Juhan Nam
-— KAIST · Neutune · National Gugak Center · Korea Culture Information Service Agency
+Danbinaerin Han, Wonil Kim, Seah Hong, Dongjoo Moon, Jaeok Lee, Jongpil Lee, Chaewon Kim, Juhan Nam
+— KAIST · Neutune · National Gugak Center
 
 ### 🎧 [Interactive demo page →](https://www.danbinaerin.com/Gugak-VocalSet/)
 
@@ -288,8 +288,7 @@ Recordings were made under agreements with the performers and the National Gugak
 @inproceedings{gugakvocalset2026,
   title     = {Gugak-VocalSet: A Multi-Genre Studio-Quality Dataset of Korean Traditional Singing with Sigimsae Annotations},
   author    = {Han, Danbinaerin and Kim, Wonil and Hong, Seah and Moon, Dongjoo and
-               Lee, Jaeok and Lee, Gwon Soo and Lee, Jongpil and Kim, Chaewon and
-               Nam, Juhan},
+               Lee, Jaeok and Lee, Jongpil and Kim, Chaewon and Nam, Juhan},
   booktitle = {Proc. of the 27th Int. Society for Music Information Retrieval Conf. (ISMIR)},
   address   = {Abu Dhabi, UAE},
   year      = {2026}

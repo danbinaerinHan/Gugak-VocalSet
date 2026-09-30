@@ -68,7 +68,7 @@ def validate_demo_tracks(index):
     problems = []
     for p_id in DEMO_TRACKS:
         if p_id not in index:
-            problems.append(f"{p_id}: missing from total_metadata.csv index")
+            problems.append(f"{p_id}: missing from data/raw/total_metadata.csv index")
             continue
         if not index[p_id]["audio_path"].exists():
             problems.append(f"{p_id}: KVocSet audio missing ({index[p_id]['audio_path']})")

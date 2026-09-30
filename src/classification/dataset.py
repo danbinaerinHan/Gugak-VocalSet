@@ -4,7 +4,7 @@ Extracts segments from F0 contour + sigimsae label JSON and
 manages them by splitting into train/val/test.
 
 Usage:
-    from dataset import SigimsaeF0Dataset
+    from src.classification.dataset import SigimsaeF0Dataset
 
     ds = SigimsaeF0Dataset()
     ds.summary()
@@ -12,6 +12,7 @@ Usage:
     X_train, y_train = ds.get_split("train")
     X_val, y_val = ds.get_split("val")
 """
+from src import paths
 import json
 import numpy as np
 from pathlib import Path
@@ -22,7 +23,7 @@ import torch
 import torch.nn.functional as F
 from torch.utils.data import Dataset as TorchDataset
 
-from prepare_f0_dataset import (
+from src.prepare.prepare_f0_dataset import (
     CLASS_NAMES,
     CLASS_NAMES2,
     LABEL_TO_GROUP,
@@ -89,7 +90,7 @@ class SigimsaeF0Dataset:
 
     def __init__(
         self,
-        label_dir: str = "sigimsae_labels",
+        label_dir: str = str(paths.LABEL_DIR),
         f0_dir: str = "pitch_output/rmvpe",
         max_frames: int = 200,
         pad_ms: int = 0,
@@ -525,9 +526,9 @@ class SigimsaeMelDataset:
 
     def __init__(
         self,
-        label_dir: str = "sigimsae_labels",
-        audio_dir: str = "KVocSet",
-        mel_dir: str = "features/mel_output",
+        label_dir: str = str(paths.LABEL_DIR),
+        audio_dir: str = str(paths.AUDIO_DIR),
+        mel_dir: str = str(paths.MEL_DIR),
         sr: int = 22050,
         n_mels: int = 64,
         n_fft: int = 1024,
@@ -931,8 +932,8 @@ class SigimsaeWaveformDataset:
 
     def __init__(
         self,
-        label_dir: str = "precheck_sigimsae_labels",
-        audio_dir: str = "KVocSet",
+        label_dir: str = str(paths.PRECHECK_LABEL_DIR),
+        audio_dir: str = str(paths.AUDIO_DIR),
         sr: int = 24000,
         duration: float = 3.0,
         pad_ms: int = 0,
@@ -945,7 +946,7 @@ class SigimsaeWaveformDataset:
         class_scheme: Optional[str] = "7cat",
         fine_grained: bool = False,
         group2: bool = False,
-        cache_dir: str = "waveform_cache",
+        cache_dir: str = str(paths.WAVEFORM_CACHE_DIR),
     ):
         self.label_dir = Path(label_dir)
         self.audio_dir = Path(audio_dir)
@@ -1470,8 +1471,8 @@ class SigimsaeChromaDataset:
 
     def __init__(
         self,
-        label_dir: str = "precheck_sigimsae_labels",
-        chroma_dir: str = "features/chroma_output",
+        label_dir: str = str(paths.PRECHECK_LABEL_DIR),
+        chroma_dir: str = str(paths.CHROMA_DIR),
         sr: int = 22050,
         n_chroma: int = 120,
         n_fft: int = 4096,

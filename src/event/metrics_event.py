@@ -12,7 +12,7 @@ Each metric supports 3-level evaluation conditions:
   - class_aware: sigimsae type must also match
 
 Usage:
-    from metrics_event import evaluate_all_metrics, frames_to_events
+    from src.event.metrics_event import evaluate_all_metrics, frames_to_events
 
     pred_events = frames_to_events(pred_frames, hop_sec)
     ref_events = frames_to_events(ref_frames, hop_sec)

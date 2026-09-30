@@ -25,7 +25,7 @@ def _resolve_existing(root_dir: Path, filename: str) -> Path:
 def load_track_index(root: Path) -> dict:
     """Return {p_id: {s_id, singer, row, audio_path, f0_path, annotation_path}} for all tracks."""
     index = {}
-    with open(root / "total_metadata.csv", newline="", encoding="utf-8") as f:
+    with open(root / "data/raw/total_metadata.csv", newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             s_id = row["정제데이터 파일명"].strip()
             if not s_id:
@@ -34,10 +34,10 @@ def load_track_index(root: Path) -> dict:
             base = f"{row['Old ID'].strip()}_{row['장르'].strip()}_{row['하위장르'].strip()}"
 
             # Resolve audio path (handles NFC/NFD filesystem variations)
-            audio_path = _resolve_existing(root / "KVocSet", f"{base}.mp3")
+            audio_path = _resolve_existing(root / "data/raw/KVocSet", f"{base}.mp3")
 
             # Resolve F0 path (handles NFC/NFD filesystem variations)
-            f0_path = _resolve_existing(root / "features/pitch_output/rmvpe", f"{base}_f0.npy")
+            f0_path = _resolve_existing(root / "data/derived/features/pitch_output/rmvpe", f"{base}_f0.npy")
             f0_path = f0_path if f0_path.exists() else None
 
             index[p_id] = {
@@ -46,6 +46,6 @@ def load_track_index(root: Path) -> dict:
                 "row": row,
                 "audio_path": audio_path,
                 "f0_path": f0_path,
-                "annotation_path": root / "raw_json" / f"{p_id}.json",
+                "annotation_path": root / "data/raw/raw_json" / f"{p_id}.json",
             }
     return index

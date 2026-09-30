@@ -238,6 +238,7 @@ The `src/` and `configs/` directories ship the experiment code that produced the
 
 ```
 src/
+├── paths.py                             # All data / output locations (data/raw, data/derived, experiments/)
 ├── classification/                      # Tables 2 & 3
 │   ├── train_kfold.py                   # 5-fold CV training; also drives cross-genre runs
 │   ├── models.py                        # F0CNN (SigimsaeCNN), MelCNN, MERTEmbeddingClassifier
@@ -267,6 +268,7 @@ configs/                                 # Classification YAML configs (see base
 
 ### Reproduction notes
 
+- Run everything from the repository root as modules, e.g. `python -m src.classification.train_kfold --config configs/b2_f0cnn.yaml` or `python -m src.event.train_event_kfold --model EDTCN --feature-type f0 --class-scheme 17cat`. Expected data locations (`data/raw/`, `data/derived/`) and output locations (`experiments/`) are defined in `src/paths.py`.
 - Both training scripts use **per-song stratified 5-fold CV** with a fixed seed, so a single invocation reproduces all five folds reported in the paper.
 - F0 features are extracted with **RMVPE at 10 ms hop**. The `delta_f0` channel is scaled (×10) and clipped inside the dataset class — without this normalization the channel has near-zero variance and is effectively ignored by the first conv layer.
 - MERT / CultureMERT probing operates on **pre-extracted hidden states** rather than raw waveforms, following the MARBLE protocol. The extraction step is handled by external scripts not included in this release.

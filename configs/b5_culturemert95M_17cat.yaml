@@ -9,7 +9,7 @@
 #   3) this config
 
 model: MERTEmbeddingClassifier
-embedding_path: mert_embedding_cache/mert_CultureMERT-95M_17cat_L-1.npz
+embedding_path: data/derived/mert_embedding_cache/mert_CultureMERT-95M_17cat_L-1.npz
 class_scheme: 17cat
 
 # Training (converges quickly since input is pre-extracted embeddings)

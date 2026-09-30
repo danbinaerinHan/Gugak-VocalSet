@@ -10,13 +10,14 @@ Key points:
   - The input representation is determined by feature_type (chroma, mel)
 
 Usage:
-    from event_dataset import SigimsaeEventDataset
+    from src.event.event_dataset import SigimsaeEventDataset
     ds = SigimsaeEventDataset(class_scheme="7cat", feature_type="chroma")
     ds = SigimsaeEventDataset(class_scheme="7cat", feature_type="mel")
     ds.summary()
     train_loader = ds.get_dataloader("train", batch_size=32)
 """
 
+from src import paths
 import json
 import numpy as np
 from pathlib import Path
@@ -26,7 +27,7 @@ from typing import Optional, Dict, List, Tuple
 import torch
 from torch.utils.data import Dataset as TorchDataset, DataLoader
 
-from prepare_f0_dataset import (
+from src.prepare.prepare_f0_dataset import (
     CLASS_SCHEMES,
     CLASS_NAMES2,
     resolve_class2,
@@ -40,30 +41,30 @@ NO_ORNAMENT = 0
 # Default settings per feature type
 FEATURE_DEFAULTS = {
     "chroma": {
-        "dir": "features/chroma_output/22050_120_4096_386",
+        "dir": str(paths.CHROMA_DIR / "22050_120_4096_386"),
         "hop_sec": 386 / 22050,   # ≈ 0.01752s
     },
     "mel": {
-        "dir": "features/mel_output/22050_128_2048_512",
+        "dir": str(paths.MEL_DIR / "22050_128_2048_512"),
         "hop_sec": 512 / 22050,   # ≈ 0.02322s
     },
     "waveform": {
-        "dir": "KVocSet",          # mp3 audio file directory
+        "dir": str(paths.AUDIO_DIR),          # mp3 audio file directory
         "hop_sec": 320 / 24000,    # MERT CNN hop ≈ 0.01333s
         "sr": 24000,               # sample rate required by MERT
     },
     "mert_hidden": {
-        "dir": "mert_embedding_cache/frame_features",  # pre-extracted MERT hidden states
+        "dir": str(paths.MERT_CACHE_DIR / "frame_features"),  # pre-extracted MERT hidden states
         "hop_sec": 320 / 24000,    # MERT CNN hop ≈ 0.01333s
     },
     "f0": {
-        "dir": "features/pitch_output/rmvpe",  # RMVPE-extracted F0 (song-level)
+        "dir": str(paths.RMVPE_DIR),  # RMVPE-extracted F0 (song-level)
         "hop_sec": 0.01,           # RMVPE native hop = 10ms
     },
     "mel_f0": {
-        "dir": "features/mel_output/22050_128_2048_512",  # mel-based hop
+        "dir": str(paths.MEL_DIR / "22050_128_2048_512"),  # mel-based hop
         "hop_sec": 512 / 22050,    # ≈ 0.02322s (mel hop; f0 is resampled)
-        "f0_dir": "features/pitch_output/rmvpe",
+        "f0_dir": str(paths.RMVPE_DIR),
     },
 }
 
@@ -330,7 +331,7 @@ class SigimsaeEventDataset:
 
     def __init__(
         self,
-        label_dir: str = "precheck_sigimsae_labels",
+        label_dir: str = str(paths.PRECHECK_LABEL_DIR),
         feature_type: str = "chroma",
         feature_dir: str = None,
         class_scheme: str = None,

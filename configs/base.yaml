@@ -3,10 +3,10 @@
 # Per-config files override these by re-specifying the same key.
 
 # Data
-label_dir: precheck_sigimsae_labels
-audio_dir: KVocSet
-f0_dir: features/pitch_output/rmvpe
-chroma_dir: features/chroma_output
+label_dir: data/raw/precheck_sigimsae_labels
+audio_dir: data/raw/KVocSet
+f0_dir: data/derived/features/pitch_output/rmvpe
+chroma_dir: data/derived/features/chroma_output
 class_scheme: 7cat          # 7cat | 9cat | 17cat
 
 # Split

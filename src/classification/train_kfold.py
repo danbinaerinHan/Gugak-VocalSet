@@ -5,13 +5,14 @@ Splits the data using Song-level Stratified K-Fold and fixes the model seed
 so that only variation due to data splitting is measured.
 
 Usage:
-    python train_kfold.py --config configs/b2_f0cnn.yaml
-    python train_kfold.py --config configs/b3_melcnn.yaml
-    python train_kfold.py --config configs/b4_resnet18.yaml
-    python train_kfold.py --config configs/b5_mert_emb.yaml
-    python train_kfold.py --config configs/b2_f0cnn.yaml --n-folds 5 --model-seed 123
+    python -m src.classification.train_kfold --config configs/b2_f0cnn.yaml
+    python -m src.classification.train_kfold --config configs/b3_melcnn.yaml
+    python -m src.classification.train_kfold --config configs/b4_resnet18.yaml
+    python -m src.classification.train_kfold --config configs/b5_mert_emb.yaml
+    python -m src.classification.train_kfold --config configs/b2_f0cnn.yaml --n-folds 5 --model-seed 123
 """
 
+from src import paths
 import argparse
 import json
 import numpy as np
@@ -31,16 +32,16 @@ matplotlib.rcParams['axes.unicode_minus'] = False
 
 import wandb
 
-from dataset import SigimsaeF0Dataset, SigimsaeMelDataset, SigimsaeEmbeddingDataset, SigimsaeChromaDataset
-from prepare_f0_dataset import CLASS_SCHEMES
-from models import (
+from src.classification.dataset import SigimsaeF0Dataset, SigimsaeMelDataset, SigimsaeEmbeddingDataset, SigimsaeChromaDataset
+from src.prepare.prepare_f0_dataset import CLASS_SCHEMES
+from src.classification.models import (
     MODEL_REGISTRY,
     MODEL_CONFIGS,
     FocalLoss,
     compute_class_weights, compute_macro_f1,
     evaluate, print_classification_report,
 )
-from train import load_config, plot_confusion_matrix, plot_curves
+from src.classification.train import load_config, plot_confusion_matrix, plot_curves
 
 
 # ─── full seed fixing ─────────────────────────────────────
@@ -932,15 +933,15 @@ def parse_args():
     DEFAULTS = {
         "model": "SigimsaeCNN",
         "class_scheme": "7cat",
-        "label_dir": "precheck_sigimsae_labels",
+        "label_dir": str(paths.PRECHECK_LABEL_DIR),
         "f0_method": "rmvpe",
         "f0_dir": None,
         "beat_dir": None,
         "max_frames": 300,
         "pad_ms": 0,
         "seed": 42,
-        "audio_dir": "KVocSet",
-        "chroma_dir": "features/chroma_output",
+        "audio_dir": str(paths.AUDIO_DIR),
+        "chroma_dir": str(paths.CHROMA_DIR),
         "sr": 22050,
         "n_mels": 128,
         "n_chroma": 120,
@@ -1081,7 +1082,7 @@ def main():
     elif input_type == "chroma":
         ds = SigimsaeChromaDataset(
             label_dir=args.label_dir,
-            chroma_dir=getattr(args, 'chroma_dir', 'features/chroma_output'),
+            chroma_dir=getattr(args, 'chroma_dir', str(paths.CHROMA_DIR)),
             sr=args.sr,
             n_chroma=getattr(args, 'n_chroma', 120),
             n_fft=args.n_fft,
@@ -1144,7 +1145,7 @@ def main():
         sseed = getattr(args, "sample_seed", None)
         sub_tag = f"_ss{sseed if sseed is not None else args.seed}"
     RUN_NAME = f"{model_name}_{args.class_scheme}{norm_tag}{cross_tag}{sub_tag}_{args.n_folds}fold_{RUN_TS}"
-    run_dir = Path(f"models/{RUN_NAME}")
+    run_dir = paths.MODELS_DIR / RUN_NAME
     run_dir.mkdir(parents=True, exist_ok=True)
     print(f"Run: {run_dir}")
 
@@ -1241,7 +1242,7 @@ def main():
     print(f"\nResults saved: {results_path}")
 
     # combined results file
-    CV_RESULTS_PATH = Path("results/kfold_results.json")
+    CV_RESULTS_PATH = paths.RESULTS_DIR / "kfold_results.json"
     CV_RESULTS_PATH.parent.mkdir(parents=True, exist_ok=True)
     all_cv = []
     if CV_RESULTS_PATH.exists():

@@ -29,6 +29,10 @@ docs/superpowers/
 !src/
 !src/**/
 !src/**/*.py
+# ...but keep internal-only modules out of the public repo (README: "not included here")
+src/prepare/
+src/classification/train.py
+src/event/train_event.py
 
 # Paper-relevant config files only (drop b1_svm, b4_resnet18, b5_mert, b5_mert_emb, b6_chromacnn)
 !configs/

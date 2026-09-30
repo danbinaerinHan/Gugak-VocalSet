@@ -13,6 +13,7 @@ Usage:
         --class-scheme 17cat --n-folds 5 --model-seed 123 --seed 42
 """
 
+from src import paths
 import argparse
 import fcntl
 import json
@@ -27,12 +28,12 @@ matplotlib.use("Agg")
 matplotlib.rcParams['font.family'] = 'NanumGothic'
 matplotlib.rcParams['axes.unicode_minus'] = False
 
-from event_dataset import SigimsaeEventDataset, DONT_CARE
-from models_event import (
+from src.event.event_dataset import SigimsaeEventDataset, DONT_CARE
+from src.event.models_event import (
     EVENT_MODEL_REGISTRY, DontCareCrossEntropyLoss, DontCareFocalLoss,
 )
-from metrics_event import evaluate_model_events, print_event_metrics
-from train_event import (
+from src.event.metrics_event import evaluate_model_events, print_event_metrics
+from src.event.train_event import (
     _align_logits_labels,
     frame_evaluate,
     compute_macro_f1,
@@ -492,7 +493,7 @@ def parse_args():
     p.add_argument("--feature-dir", type=str, default=None)
     p.add_argument("--class-scheme", type=str, default=None,
                    choices=["7cat", "9cat", "17cat", "total"])
-    p.add_argument("--label-dir", type=str, default="precheck_sigimsae_labels")
+    p.add_argument("--label-dir", type=str, default=str(paths.PRECHECK_LABEL_DIR))
     p.add_argument("--chunk-sec", type=float, default=10.0)
     p.add_argument("--no-dont-care", action="store_true")
     p.add_argument("--jitter-sec", type=float, default=0.5)
@@ -581,7 +582,7 @@ def main():
         f"event_{args.model}_{args.feature_type}_{scheme_tag}_{dc_tag}"
         f"_{args.n_folds}fold_{RUN_TS}"
     )
-    run_dir = Path(f"models/{RUN_NAME}")
+    run_dir = paths.MODELS_DIR / RUN_NAME
     run_dir.mkdir(parents=True, exist_ok=True)
     print(f"Run: {run_dir}")
 
@@ -664,7 +665,7 @@ def main():
     print(f"\nResults saved: {results_path}")
 
     # append to the consolidated results file (safe for parallel runs: lockfile + flock)
-    CV_RESULTS_PATH = Path("results/event_kfold_results.json")
+    CV_RESULTS_PATH = paths.RESULTS_DIR / "event_kfold_results.json"
     CV_RESULTS_PATH.parent.mkdir(parents=True, exist_ok=True)
     lock_path = CV_RESULTS_PATH.with_suffix(".lock")
     with open(lock_path, "w") as lockf:

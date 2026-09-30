@@ -19,7 +19,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from prepare_f0_dataset import CLASS_NAMES
+from src.prepare.prepare_f0_dataset import CLASS_NAMES
 
 
 # ─── Loss ──────────────────────────────────────────────

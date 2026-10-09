@@ -21,7 +21,7 @@ Gugak-VocalSet is the first publicly available audio dataset for Korean traditio
 - **24.5 hours** of unaccompanied solo vocal recordings
 - **305 tracks** of representative repertoire curated by the National Gugak Center
 - **20 professional singers**, recorded in a controlled studio environment with fixed key and tempo
-- **~69,000 audio-grounded sigimsae annotations** following a unified **17-type ontology** organized by functional position (onset / mid-note / offset / transition / accent / vibrato)
+- **~68,000 audio-grounded sigimsae segments** (71,700 instances including multi-label) following a unified **17-type ontology** organized by functional position (onset / mid-note / offset / transition / accent / vibrato)
 - Rich metadata: genre hierarchy, lyrics–audio alignment, Western key, jangdan, tempo, bilingual captions, expert mood & timbre tags
 
 <p align="center">
@@ -172,7 +172,7 @@ Each panel shows the three layers of time-aligned annotation for one excerpt: **
 
 ### Label statistics
 
-Across 305 tracks / ~69k regions (multi-label regions: ~4.9%):
+Across 305 tracks / ~68k segments (multi-label segments: 5.1%):
 
 <p align="center">
   <img src="figures/sigimsae_count.png" width="720" alt="Annotation count per sigimsae type on a log scale. Onset-DFl (꺾어내기) and Vibrato-St (보통 요성) are the most frequent; Onset-LTn (감아내기 아래) and Offset-RBk (끝굴려내기 위) are the rarest.">

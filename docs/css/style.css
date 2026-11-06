@@ -112,3 +112,5 @@ footer { border-top: 1px solid var(--line); color: var(--muted); text-align: cen
   .typebody { flex-wrap: wrap; gap: .6rem; }
   .type-card .count { float: none; display: block; }   /* stop it colliding with the name */
 }
+pre.tree { background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+  padding: .8rem 1rem; font-size: .8rem; line-height: 1.5; overflow-x: auto; }

@@ -33,7 +33,7 @@
     <a class="badge" href="#paper">Paper</a>
     <a class="badge" href="https://github.com/danbinaerinHan/Gugak-VocalSet"
        target="_blank" rel="noopener">GitHub</a>
-    <a class="badge" href="#download">Dataset (coming soon)</a>
+    <a class="badge" href="#download">Dataset</a>
   </p>
   <ul class="stats">
     <li><b>24.5 h</b> audio</li><li><b>305</b> tracks</li><li><b>20</b> singers</li>
@@ -143,13 +143,80 @@
 
   <section id="download"><h2>Download &amp; Citation</h2>
     <div id="download-content">
-      <p class="note"><b>Coming soon.</b> The full dataset will be publicly released soon.</p>
-      <p>The full dataset — 24.5 h of audio, 305 annotation JSONs, and the track-level
-         metadata — will be released in collaboration with the National Gugak Center.
-         Distribution terms and the download location will be announced here.
-         <!-- RELEASE LINK: add the download location once settled -->
-         <!-- LICENSE: dataset and code license terms are undecided as of 2026-07-27.
-              Do not restate a license anywhere on this page until they are agreed. --></p>
+      <p>The full dataset is distributed by the Korea Culture Information Service Agency (KCISA)
+         and the National Gugak Center on the
+         <a href="https://www.culture.go.kr/data/contents/3DListDtlView.do?blbmId=BLBM0000000000003708&amp;bbsId=BBS0022"
+            target="_blank" rel="noopener">Culture Public Data Plaza</a>
+         <span class="kr" lang="ko">문화공공데이터광장</span>, under the title
+         <span lang="ko">국악 음원 학습데이터(원천/라벨링 데이터)</span>.
+         The portal is in Korean only, so the steps are given below.</p>
+
+      <h3>How to download</h3>
+      <ol>
+        <li>Open the <a href="https://www.culture.go.kr/data/contents/3DListDtlView.do?blbmId=BLBM0000000000003708&amp;bbsId=BBS0022"
+            target="_blank" rel="noopener">dataset page</a> and scroll to the bottom,
+            to the section titled <span lang="ko">원본내려받기</span> (“original download”).</li>
+        <li>The data is split into 22 ZIP files, each under 2 GB. There is no bulk download,
+            so click each file separately.
+          <ul>
+            <li><b>Part1_01.zip – Part1_14.zip</b> (14 files, about 12 GB in total) make up
+                Gugak-VocalSet: the 305 tracks described on this page and in the paper.</li>
+            <li><b>Part2_01.zip – Part2_08.zip</b> (8 files, about 8 GB) are a separate
+                collection of National Gugak Center archive recordings, split into phrases.
+                They are not part of Gugak-VocalSet and were not used in the paper.</li>
+          </ul></li>
+        <li>Before the first download, the portal may ask you to fill in a short usage request
+            (<span lang="ko">콘텐츠 사용신청</span>): tick the consent box
+            (<span lang="ko">동의합니다</span>) and press <span lang="ko">다음</span> (Next), choose
+            individual (<span lang="ko">개인</span>) or business (<span lang="ko">사업자</span>),
+            your age group and purpose of use, then press <span lang="ko">다음</span> again.
+            The files can then be downloaded from the same page.</li>
+      </ol>
+
+      <h3>Terms of use</h3>
+      <p>The data is released under the Korea Open Government License (KOGL,
+         <span lang="ko">공공누리</span>) as stated on the portal. Audio and labels carry
+         different types.</p>
+      <ul>
+        <li><b>Audio</b> (<span lang="ko">원천데이터</span>): KOGL Type 1 + AI type.
+          <ul>
+            <li>Type 1: commercial and non-commercial use and derivative works are allowed,
+                with attribution of the source.</li>
+            <li>AI type: the audio may be used to train AI models, and trained models may be
+                used commercially. Technical measures must be taken so that outputs are not
+                identical or substantially similar to the original recordings, and so that the
+                source is credited when an output directly quotes the original. Reselling
+                training data built from these recordings is not allowed.</li>
+          </ul></li>
+        <li><b>Labels</b> (<span lang="ko">라벨링데이터</span>): KOGL Type 0, free use without
+            attribution requirements.</li>
+      </ul>
+      <p>The portal page is the authoritative source for these terms. If you use the dataset
+         in research, please also cite the paper below.</p>
+      <!-- LICENSE: terms copied from the portal page as of 2026-11-06 (data only).
+           Code license is still undecided; do not state one for the code. -->
+
+      <h3>What is inside each ZIP</h3>
+      <p>Every Part1 archive holds about 22 tracks, mixed across genres. Tracks are not
+         grouped by genre, so you need all 14 files for the complete dataset.</p>
+<pre class="tree">Part1_01/
+└── 정악(JC)-풍류음악(PR)/            genre folder (see below)
+    └── TRK_004/                      track ID = track 004 in this repository
+        ├── 원천데이터/               "source data": the audio
+        │   ├── *.wav                 (48 kHz / 24-bit)
+        │   └── *.json
+        └── 라벨링데이터/             "labeling data": the annotations
+            └── *.json                sigimsae, lyrics, metadata</pre>
+      <p>Genre folders: <span lang="ko">정악(JC)-궁중음악(GJ)</span> Jeongak – court music ·
+         <span lang="ko">정악(JC)-풍류음악(PR)</span> Jeongak – literati music (Pungnyu) ·
+         <span lang="ko">민속악(MF)-판소리(PS)</span> Minsogak – Pansori ·
+         <span lang="ko">민속악(MF)-민요(MY)</span> Minsogak – folk song (Minyo).</p>
+      <p>The folder number matches the track numbering used in this repository and its
+         metadata: <code>TRK_001</code> – <code>TRK_305</code> correspond to tracks 1–305
+         (e.g. <code>TRK_004</code> ↔ <code>KC_TM_JC_PR_S000004</code>).</p>
+      <!-- Source: .orca/drops/261106_문정원_ZIP별_폴더구성_목록 (Part1 = TRK_001–305, Part2 = TRK_306–562).
+           TRK_NNN ↔ S000NNN verified 305/305 by title on 2026-11-06.
+           Direct file URLs (/3Ddata/Gugak_Vocalists_Data/*.zip) return 403 outside the page, so no wget script. -->
       <p>This repository currently ships a 5-track sample (40-second excerpts pending release
          clearance) and the complete metadata; see the
          repository README for schemas.<!-- GITHUB LINK: restore repository URL upon publication --></p>
@@ -168,8 +235,9 @@
 
 <footer>
   <p>Gugak-VocalSet · Recorded in collaboration with the National Gugak Center</p>
-  <!-- LICENSE: intentionally omitted — dataset/code terms undecided as of 2026-07-27.
-       Add a rights line here only once the agreement with the NGC and the performers is settled. -->
+  <p>Data: KOGL Type 1 + AI type (audio) and Type 0 (labels), as stated on the
+     <a href="#download">Culture Public Data Plaza</a> page.</p>
+  <!-- LICENSE: data terms from the portal (2026-11-06). Code license still undecided. -->
 </footer>
 
 <script src="js/app.js"></script>
